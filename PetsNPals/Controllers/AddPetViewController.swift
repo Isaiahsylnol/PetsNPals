@@ -8,7 +8,7 @@
 import UIKit
 import SQLite3
 
-class AddPetViewController: UIViewController {
+class AddPetViewController: UIViewController, UITextViewDelegate {
     var db:DBHelper = DBHelper()
 
     @IBOutlet weak var petNameTextField: UITextField!
@@ -18,7 +18,7 @@ class AddPetViewController: UIViewController {
     @IBOutlet weak var petAgeTextField: UITextField!
     @IBOutlet weak var petWeightTextField: UITextField!
     @IBOutlet weak var petHeightTextField: UITextField!
-    @IBOutlet weak var commentsTextField: UITextField!
+    @IBOutlet weak var commentsTextView: UITextView!
     
     @IBAction func saveButton(_ sender: Any) {
         let names = (petNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
@@ -27,7 +27,7 @@ class AddPetViewController: UIViewController {
         let age = Int((petAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
         let weight = Int((petWeightTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
         let height = Int((petHeightTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
-        let comments = (commentsTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+        let comments = (commentsTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
 
         db.insert( age: age, name: names, gender: genders, breed: breeds, weight: weight, height: height, comments: comments)
         
@@ -42,7 +42,14 @@ class AddPetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        commentsTextView.text = "Enter comments"
+        commentsTextView.textColor = UIColor.lightGray
+        commentsTextView.returnKeyType = .done
+        commentsTextView.delegate = self
+        commentsTextView!.layer.borderWidth = 1
+        commentsTextView!.layer.borderColor = UIColor.lightGray.cgColor
+ 
         // Do any additional setup after loading the view.
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -50,6 +57,27 @@ class AddPetViewController: UIViewController {
         breedTextField.inputView = pickerView
      
         print("Everything is fine with database")
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Enter comments" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.text = "Enter comments"
+            textView.textColor = UIColor.lightGray
+        }
     }
 }
 
