@@ -16,6 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-8D-w1I">
+                                <rect key="frame" x="25" y="406" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <segue destination="rAo-eb-ZM8" kind="show" id="wAO-7R-iBf"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWa-M5-Fw3" userLabel="Home">
                                 <rect key="frame" x="23" y="129" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,12 +48,12 @@
                                     <segue destination="iwj-oD-IVn" kind="show" id="kEc-Pz-uLs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mm-yn-ekn">
-                                <rect key="frame" x="21" y="350" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-pk-xmo">
+                                <rect key="frame" x="23" y="351" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tRt-cw-Jwi"/>
+                                    <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oa8-NS-usi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZM-Gv-h0U" userLabel="Subscriptions">
@@ -121,7 +129,7 @@
                     <navigationItem key="navigationItem" id="9S8-dl-6FC">
                         <barButtonItem key="leftBarButtonItem" title="Menu" image="line.horizontal.3" catalog="system" id="f4m-6T-f07">
                             <connections>
-                                <action selector="menuTapped:" destination="BYZ-38-t0r" id="rzZ-0V-8dj"/>
+                                <action selector="didTapMenuButton" destination="BYZ-38-t0r" id="Cnc-Aq-lWl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,26 +195,88 @@
             </objects>
             <point key="canvasLocation" x="365" y="860"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Cqr-5e-KUt">
             <objects>
-                <viewController id="rAo-eb-ZM8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAo-eb-ZM8" customClass="AboutViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qb-Hd-bSB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O3T-Zh-9f9">
+                                <rect key="frame" x="40" y="543" width="334" height="264"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, Canada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjN-v2-DRD">
+                                <rect key="frame" x="40" y="514.5" width="126" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="416.444.2222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-xd-rF4">
+                                <rect key="frame" x="40" y="485" width="106.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q04-yP-YV2">
+                                <rect key="frame" x="40" y="456" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-6I-BNC">
+                                <rect key="frame" x="40" y="232" width="334" height="208"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1v-YF-kvQ">
+                                <rect key="frame" x="164" y="200" width="87" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xPN-hU-rdz"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="bottom" secondItem="O3T-Zh-9f9" secondAttribute="bottom" constant="55" id="1x5-gz-tnl"/>
+                            <constraint firstItem="O3T-Zh-9f9" firstAttribute="top" secondItem="GjN-v2-DRD" secondAttribute="bottom" constant="8" symbolic="YES" id="808-lJ-lyE"/>
+                            <constraint firstItem="KjU-xd-rF4" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="40" id="96g-JC-xjY"/>
+                            <constraint firstItem="e1v-YF-kvQ" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="164" id="CQO-Nd-h6n"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="KjU-xd-rF4" secondAttribute="trailing" constant="267.5" id="F1d-lT-s9K"/>
+                            <constraint firstItem="cQF-6I-BNC" firstAttribute="top" secondItem="xPN-hU-rdz" secondAttribute="top" constant="144" id="LE8-TH-3fJ"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="bottom" secondItem="cQF-6I-BNC" secondAttribute="bottom" constant="422" id="NWB-Q6-23k"/>
+                            <constraint firstItem="O3T-Zh-9f9" firstAttribute="top" secondItem="xPN-hU-rdz" secondAttribute="top" constant="455" id="Nxk-C7-wj5"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="cQF-6I-BNC" secondAttribute="trailing" constant="40" id="UrV-A4-IP0"/>
+                            <constraint firstItem="GjN-v2-DRD" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="40" id="YPP-ak-sp1"/>
+                            <constraint firstItem="KjU-xd-rF4" firstAttribute="top" secondItem="Q04-yP-YV2" secondAttribute="bottom" constant="8" symbolic="YES" id="gI1-6q-7Mm"/>
+                            <constraint firstItem="GjN-v2-DRD" firstAttribute="top" secondItem="KjU-xd-rF4" secondAttribute="bottom" constant="8.5" id="j7b-2r-GFE"/>
+                            <constraint firstItem="Q04-yP-YV2" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="40" id="j8N-bP-GRa"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="O3T-Zh-9f9" secondAttribute="trailing" constant="40" id="m1H-hp-oee"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="GjN-v2-DRD" secondAttribute="trailing" constant="248" id="mtt-9T-Rcp"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="e1v-YF-kvQ" secondAttribute="trailing" constant="163" id="t88-0o-GMk"/>
+                            <constraint firstItem="cQF-6I-BNC" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="40" id="vfW-a2-eZO"/>
+                            <constraint firstItem="cQF-6I-BNC" firstAttribute="top" secondItem="e1v-YF-kvQ" secondAttribute="bottom" constant="8" symbolic="YES" id="w4l-jh-jjJ"/>
+                            <constraint firstItem="O3T-Zh-9f9" firstAttribute="leading" secondItem="xPN-hU-rdz" secondAttribute="leading" constant="40" id="x7U-Ko-j1P"/>
+                            <constraint firstItem="xPN-hU-rdz" firstAttribute="trailing" secondItem="Q04-yP-YV2" secondAttribute="trailing" constant="281" id="yiF-SK-Thh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6z9-as-NaU"/>
+                    <connections>
+                        <outlet property="mapView" destination="O3T-Zh-9f9" id="qGM-KH-pzM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luW-gK-YMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272" y="860"/>
+            <point key="canvasLocation" x="1271.0144927536232" y="859.82142857142856"/>
         </scene>
         <!--Manage Pets-->
         <scene sceneID="SZT-Ii-gIK">
             <objects>
-                <viewController id="iwj-oD-IVn" customClass="ManagePetController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagePetController" id="iwj-oD-IVn" customClass="ManagePetController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PGl-ek-jAu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,7 +397,7 @@
         <!--Add Pet View Controller-->
         <scene sceneID="7AQ-zx-CJs">
             <objects>
-                <viewController id="xi7-00-Ruc" customClass="AddPetViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPetViewController" id="xi7-00-Ruc" customClass="AddPetViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7SW-hW-895">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +446,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTf-Hg-AGD">
-                                <rect key="frame" x="152" y="794" width="72" height="44"/>
+                                <rect key="frame" x="152" y="785" width="72" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -419,7 +489,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ber-Eb-can">
-                                <rect key="frame" x="23" y="658" width="361" height="128"/>
+                                <rect key="frame" x="23" y="660" width="361" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -427,7 +497,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHI-Sa-cNj">
-                                <rect key="frame" x="19" y="629" width="83" height="21"/>
+                                <rect key="frame" x="19" y="631" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -450,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQa-lR-Ldr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137.68115942029" y="1644.6428571428571"/>
+            <point key="canvasLocation" x="2122" y="1636"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uzc-Df-IpA">
@@ -482,9 +552,6 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

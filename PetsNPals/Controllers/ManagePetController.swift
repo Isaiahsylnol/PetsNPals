@@ -39,16 +39,18 @@ class ManagePetController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         pets = db.read()
-//      db.deleteByID(id: 12)
  
-        petTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        petTable.delegate = self
-        petTable.dataSource = self
+        petTable?.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        petTable?.delegate = self
+        petTable?.dataSource = self
         
 //        db.insert(id: 1, age: 8, name: "Bill", gender: "male", breed: "Huskey", weight: 174, height: 27, comments: "Worse boy")
 //        db.insert(id: 2, age: 3, name: "Shane", gender: "male", breed: "Great Dane", weight: 44, height: 24, comments: "Good boy")
 //        db.insert(id: 3, age: 2, name: "Max", gender: "female", breed: "Weiner", weight: 14, height: 8, comments: "Good boy")
 //        db.insert(id: 4, age: 6, name: "Riley", gender: "male", breed: "Shiba", weight: 84, height: 28, comments: "Good boy")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        petTable?.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

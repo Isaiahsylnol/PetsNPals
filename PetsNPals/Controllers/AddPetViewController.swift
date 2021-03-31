@@ -10,6 +10,8 @@ import SQLite3
 
 class AddPetViewController: UIViewController, UITextViewDelegate {
     var db:DBHelper = DBHelper()
+    
+    var pets:[Dog] = []
 
     @IBOutlet weak var petNameTextField: UITextField!
     @IBOutlet weak var breedTextField: UITextField!
@@ -30,10 +32,8 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         let comments = (commentsTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
 
         db.insert( age: age, name: names, gender: genders, breed: breeds, weight: weight, height: height, comments: comments)
-        
-        print(names)
-        print(breeds)
-        print(comments)
+       
+        self.dismiss(animated: true, completion: nil)
     }
     
     let breeds = ["Huskey","Labador","Poodle","Frenchie","Doberman","Boxer","Pitbull"]
@@ -42,19 +42,19 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        commentsTextView.text = "Enter comments"
-        commentsTextView.textColor = UIColor.lightGray
-        commentsTextView.returnKeyType = .done
-        commentsTextView.delegate = self
-        commentsTextView!.layer.borderWidth = 1
-        commentsTextView!.layer.borderColor = UIColor.lightGray.cgColor
+    
+        commentsTextView?.text = "Enter comments"
+        commentsTextView?.textColor = UIColor.lightGray
+        commentsTextView?.returnKeyType = .done
+        commentsTextView?.delegate = self
+        commentsTextView?.layer.borderWidth = 1
+        commentsTextView?.layer.borderColor = UIColor.lightGray.cgColor
  
         // Do any additional setup after loading the view.
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        breedTextField.inputView = pickerView
+        breedTextField?.inputView = pickerView
      
         print("Everything is fine with database")
     }

@@ -32,6 +32,10 @@
 		40A0FEFB260595A3005819E0 /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FEFA260595A3005819E0 /* HealthViewController.swift */; };
 		40A0FF362606F945005819E0 /* ManagePetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FF352606F945005819E0 /* ManagePetController.swift */; };
 		40A0FF3B260820CC005819E0 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FF3A260820CB005819E0 /* AddPetViewController.swift */; };
+		40AA36DC26122F9B0015BAEC /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AA36DB26122F9B0015BAEC /* SideMenu.swift */; };
+		40AA36E126123C1D0015BAEC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AA36E026123C1D0015BAEC /* ShopViewController.swift */; };
+		40AA36E626124F3D0015BAEC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AA36E526124F3D0015BAEC /* ProfileViewController.swift */; };
+		40AE4AF6261279100052DD6D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE4AF5261279100052DD6D /* AboutViewController.swift */; };
 		40AF501D260AA8160062B706 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF501C260AA8150062B706 /* DBHelper.swift */; };
 		40AF5023260AA8BD0062B706 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF5022260AA8BD0062B706 /* Dog.swift */; };
 		6B20F4D41998F869F14015C6 /* Pods_PetsNPalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */; };
@@ -92,6 +96,10 @@
 		40A0FEFA260595A3005819E0 /* HealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
 		40A0FF352606F945005819E0 /* ManagePetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetController.swift; sourceTree = "<group>"; };
 		40A0FF3A260820CB005819E0 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		40AA36DB26122F9B0015BAEC /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		40AA36E026123C1D0015BAEC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		40AA36E526124F3D0015BAEC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		40AE4AF5261279100052DD6D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		40AF501C260AA8150062B706 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		40AF5022260AA8BD0062B706 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPalsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,12 +214,12 @@
 				40A0FEED26058B1A005819E0 /* Cells */,
 				40A0FEBA2604F240005819E0 /* AppDelegate.swift */,
 				40A0FEBC2604F240005819E0 /* SceneDelegate.swift */,
-				40A0FEBE2604F240005819E0 /* ViewController.swift */,
 				40A0FEC02604F240005819E0 /* Main.storyboard */,
 				40A0FEC32604F244005819E0 /* Assets.xcassets */,
 				40A0FEC52604F244005819E0 /* LaunchScreen.storyboard */,
 				40A0FEC82604F244005819E0 /* Info.plist */,
 				40AF501C260AA8150062B706 /* DBHelper.swift */,
+				40AA36DB26122F9B0015BAEC /* SideMenu.swift */,
 			);
 			path = PetsNPals;
 			sourceTree = "<group>";
@@ -264,6 +272,10 @@
 				40A0FF3A260820CB005819E0 /* AddPetViewController.swift */,
 				40A0217626092CB4007F287B /* SettingsViewController.swift */,
 				40A0219426097D4C007F287B /* SubscriptionViewController.swift */,
+				40AA36E026123C1D0015BAEC /* ShopViewController.swift */,
+				40AA36E526124F3D0015BAEC /* ProfileViewController.swift */,
+				40A0FEBE2604F240005819E0 /* ViewController.swift */,
+				40AE4AF5261279100052DD6D /* AboutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -564,13 +576,17 @@
 				40A0219526097D4C007F287B /* SubscriptionViewController.swift in Sources */,
 				40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */,
 				40A0FEBB2604F240005819E0 /* AppDelegate.swift in Sources */,
+				40AA36DC26122F9B0015BAEC /* SideMenu.swift in Sources */,
 				40A0FF3B260820CC005819E0 /* AddPetViewController.swift in Sources */,
 				40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */,
 				40A0218D26094115007F287B /* SubscriptionTableViewCell.swift in Sources */,
 				40997E67260E80C20046D0B8 /* HomeTableViewCell.swift in Sources */,
+				40AE4AF6261279100052DD6D /* AboutViewController.swift in Sources */,
 				40997E47260E5E760046D0B8 /* LoginViewController.swift in Sources */,
 				40A0FEFB260595A3005819E0 /* HealthViewController.swift in Sources */,
+				40AA36E126123C1D0015BAEC /* ShopViewController.swift in Sources */,
 				40AF5023260AA8BD0062B706 /* Dog.swift in Sources */,
+				40AA36E626124F3D0015BAEC /* ProfileViewController.swift in Sources */,
 				40A0FEBD2604F240005819E0 /* SceneDelegate.swift in Sources */,
 				40997E5F260E68630046D0B8 /* DatabaseManager.swift in Sources */,
 			);
