@@ -14,6 +14,7 @@ class DBHelper
     {
         db = openDatabase()
         createTable()
+        createProductTable()
     }
 
     let dbPath: String = "pets.sqlite"
@@ -52,7 +53,6 @@ class DBHelper
         }
         sqlite3_finalize(createTableStatement)
     }
-    
     
     func insert( age:Int, name:String, gender:String, breed:String, weight:Int, height:Int, comments:String)
     {
@@ -95,7 +95,7 @@ class DBHelper
                 let height = sqlite3_column_int(queryStatement, 6)
                 let age = sqlite3_column_int(queryStatement, 3)
                 let comments = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
-                psns.append(Dog(id: Int(id), age: Int(age), name: name, gender: gender, breed: breed, weight: Int(weight), height: Int(height), comments: comments))
+                psns.append(Dog(id: Int(id), age: Int(age), name: name, gender: gender, breed: breed, weight: Int(weight), height: Int(height), comment: comments))
             }
         } else {
             print("SELECT statement could not be prepared")
@@ -119,4 +119,24 @@ class DBHelper
         }
         sqlite3_finalize(deleteStatement)
     }
+    
+    func createProductTable() {
+        let createTableString = "CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price REAL, supplier TEXT, rating INTEGER, description TEXT, image BLOB);"
+        var createTableStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
+        {
+            if sqlite3_step(createTableStatement) == SQLITE_DONE
+            {
+                print("product table created.")
+            } else {
+                print("product table could not be created.")
+            }
+        } else {
+            print("CREATE TABLE statement could not be prepared.")
+        }
+        sqlite3_finalize(createTableStatement)
+    }
+
+
 }
+

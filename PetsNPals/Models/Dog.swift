@@ -16,9 +16,9 @@ class Dog
     var breed: String = ""
     var weight: Int = 0
     var height: Int = 0
-    var comments: String = ""
+    var comment: String = ""
     
-    init(id:Int, age:Int, name:String, gender:String, breed:String, weight:Int, height:Int, comments:String) {
+    init(id:Int, age:Int, name:String, gender:String, breed:String, weight:Int, height:Int, comment:String) {
         self.id = id
         self.age = age
         self.name = name
@@ -26,6 +26,6 @@ class Dog
         self.breed = breed
         self.weight = weight
         self.height = height
-        self.comments = comments
+        self.comment = comment
     }
 }

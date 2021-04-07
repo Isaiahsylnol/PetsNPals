@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		408919E0261B8C4500E0988A /* ProdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */; };
 		40997E41260E45CB0046D0B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40997E40260E45CA0046D0B8 /* GoogleService-Info.plist */; };
 		40997E47260E5E760046D0B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40997E46260E5E760046D0B8 /* LoginViewController.swift */; };
 		40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40997E4E260E65FE0046D0B8 /* RegistrationViewController.swift */; };
@@ -38,6 +39,12 @@
 		40AE4AF6261279100052DD6D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE4AF5261279100052DD6D /* AboutViewController.swift */; };
 		40AF501D260AA8160062B706 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF501C260AA8150062B706 /* DBHelper.swift */; };
 		40AF5023260AA8BD0062B706 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF5022260AA8BD0062B706 /* Dog.swift */; };
+		40E4322C2615220600211889 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4322B2615220600211889 /* Product.swift */; };
+		40E4323226165BEA00211889 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4323126165BE900211889 /* SQLiteDatabase.swift */; };
+		40E4323A26165ECA00211889 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4323926165ECA00211889 /* SQLiteCommands.swift */; };
+		40E432402617473200211889 /* NewDogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4323F2617473200211889 /* NewDogViewModel.swift */; };
+		40E4327F2619E3DF00211889 /* ManagePetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4327E2619E3DF00211889 /* ManagePetViewModel.swift */; };
+		40E43284261A142100211889 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E43283261A142000211889 /* ProductViewModel.swift */; };
 		6B20F4D41998F869F14015C6 /* Pods_PetsNPalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */; };
 		8A526FDB993C91988694E118 /* Pods_PetsNPals_PetsNPalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032682ADB53308ACEB4B05D9 /* Pods_PetsNPals_PetsNPalsUITests.framework */; };
 		F0503439FBE26C602CADA90D /* Pods_PetsNPals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5493A61D5B17F30D7052A4 /* Pods_PetsNPals.framework */; };
@@ -65,6 +72,7 @@
 		04EF65B3A4E5EBC7922250C7 /* Pods-PetsNPals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPals.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPals/Pods-PetsNPals.debug.xcconfig"; sourceTree = "<group>"; };
 		0A135C761B9A89AB00590126 /* Pods-PetsNPalsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPalsTests.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPalsTests/Pods-PetsNPalsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C5493A61D5B17F30D7052A4 /* Pods_PetsNPals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdDetailsViewController.swift; sourceTree = "<group>"; };
 		40997E40260E45CA0046D0B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40997E46260E5E760046D0B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		40997E4E260E65FE0046D0B8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +110,12 @@
 		40AE4AF5261279100052DD6D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		40AF501C260AA8150062B706 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		40AF5022260AA8BD0062B706 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		40E4322B2615220600211889 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		40E4323126165BE900211889 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		40E4323926165ECA00211889 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
+		40E4323F2617473200211889 /* NewDogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogViewModel.swift; sourceTree = "<group>"; };
+		40E4327E2619E3DF00211889 /* ManagePetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetViewModel.swift; sourceTree = "<group>"; };
+		40E43283261A142000211889 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPalsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DF84C4988B4954F0DF25DF /* Pods-PetsNPalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPalsTests.release.xcconfig"; path = "Target Support Files/Pods-PetsNPalsTests/Pods-PetsNPalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C59D12C25E310849715473EF /* Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPals-PetsNPalsUITests/Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +220,7 @@
 		40A0FEB92604F240005819E0 /* PetsNPals */ = {
 			isa = PBXGroup;
 			children = (
+				40E432302616055700211889 /* SQLiteDatasource */,
 				40997E53260E669E0046D0B8 /* Resources */,
 				40997E40260E45CA0046D0B8 /* GoogleService-Info.plist */,
 				40AF5033260ACC420062B706 /* ViewModels */,
@@ -276,6 +291,7 @@
 				40AA36E526124F3D0015BAEC /* ProfileViewController.swift */,
 				40A0FEBE2604F240005819E0 /* ViewController.swift */,
 				40AE4AF5261279100052DD6D /* AboutViewController.swift */,
+				408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				40AF5022260AA8BD0062B706 /* Dog.swift */,
+				40E4322B2615220600211889 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,8 +315,20 @@
 		40AF5033260ACC420062B706 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				40E4323F2617473200211889 /* NewDogViewModel.swift */,
+				40E4327E2619E3DF00211889 /* ManagePetViewModel.swift */,
+				40E43283261A142000211889 /* ProductViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		40E432302616055700211889 /* SQLiteDatasource */ = {
+			isa = PBXGroup;
+			children = (
+				40E4323126165BE900211889 /* SQLiteDatabase.swift */,
+				40E4323926165ECA00211889 /* SQLiteCommands.swift */,
+			);
+			path = SQLiteDatasource;
 			sourceTree = "<group>";
 		};
 		7076009CE07EBC9A91B75BD5 /* Pods */ = {
@@ -568,10 +597,12 @@
 				40A0FEF026058B43005819E0 /* HealthTableViewCell.swift in Sources */,
 				40A0219D260990E3007F287B /* Cell.swift in Sources */,
 				40A0217D2609300B007F287B /* SwitchTableViewCell.swift in Sources */,
+				40E432402617473200211889 /* NewDogViewModel.swift in Sources */,
 				40A0FF362606F945005819E0 /* ManagePetController.swift in Sources */,
 				40A0217726092CB4007F287B /* SettingsViewController.swift in Sources */,
 				40997E55260E67C90046D0B8 /* Extensions.swift in Sources */,
 				40AF501D260AA8160062B706 /* DBHelper.swift in Sources */,
+				40E43284261A142100211889 /* ProductViewModel.swift in Sources */,
 				40997E5A260E68180046D0B8 /* AuthManager.swift in Sources */,
 				40A0219526097D4C007F287B /* SubscriptionViewController.swift in Sources */,
 				40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */,
@@ -581,14 +612,19 @@
 				40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */,
 				40A0218D26094115007F287B /* SubscriptionTableViewCell.swift in Sources */,
 				40997E67260E80C20046D0B8 /* HomeTableViewCell.swift in Sources */,
+				40E4323226165BEA00211889 /* SQLiteDatabase.swift in Sources */,
 				40AE4AF6261279100052DD6D /* AboutViewController.swift in Sources */,
 				40997E47260E5E760046D0B8 /* LoginViewController.swift in Sources */,
+				40E4327F2619E3DF00211889 /* ManagePetViewModel.swift in Sources */,
 				40A0FEFB260595A3005819E0 /* HealthViewController.swift in Sources */,
 				40AA36E126123C1D0015BAEC /* ShopViewController.swift in Sources */,
 				40AF5023260AA8BD0062B706 /* Dog.swift in Sources */,
+				40E4323A26165ECA00211889 /* SQLiteCommands.swift in Sources */,
 				40AA36E626124F3D0015BAEC /* ProfileViewController.swift in Sources */,
 				40A0FEBD2604F240005819E0 /* SceneDelegate.swift in Sources */,
 				40997E5F260E68630046D0B8 /* DatabaseManager.swift in Sources */,
+				40E4322C2615220600211889 /* Product.swift in Sources */,
+				408919E0261B8C4500E0988A /* ProdDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

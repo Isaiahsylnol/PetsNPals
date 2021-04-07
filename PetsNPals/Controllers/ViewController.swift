@@ -78,7 +78,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var trailling: NSLayoutConstraint!
     @IBOutlet var leading: NSLayoutConstraint!
-    @IBOutlet weak var homeButton: UIButton!
     
     var menuOut = false
     
@@ -127,37 +126,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Add our view controllers as children
     private func addChildControllers() {
-        addChild(shopController)
+    
         addChild(aboutController)
-        addChild(profileController)
         addChild(mainPetController)
         addChild(settingsController)
         addChild(subscriptionController)
         
-        view.addSubview(shopController.view)
         view.addSubview(aboutController.view)
-        view.addSubview(profileController.view)
+      
         view.addSubview(mainPetController.view)
         view.addSubview(settingsController.view)
         view.addSubview(subscriptionController.view)
         
-        shopController.view.frame = view.bounds
         aboutController.view.frame = view.bounds
-        profileController.view.frame = view.bounds
         mainPetController.view.frame = view.bounds
         settingsController.view.frame = view.bounds
         subscriptionController.view.frame = view.bounds
-        
-        shopController.didMove(toParent: self)
+ 
         aboutController.didMove(toParent: self)
-        profileController.didMove(toParent: self)
         mainPetController.didMove(toParent: self)
         settingsController.didMove(toParent: self)
         subscriptionController.didMove(toParent: self)
-        
-        shopController.view.isHidden = true
+ 
         aboutController.view.isHidden = true
-        profileController.view.isHidden = true
         mainPetController.view.isHidden = true
         settingsController.view.isHidden = true
         subscriptionController.view.isHidden = true
@@ -171,75 +162,63 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if named == "Home"
             {
-                self?.view.isHidden = false
-                self?.shopController.view.isHidden = true
-                self?.aboutController.view.isHidden = true
-                self?.profileController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
+                let homeView = self?.storyboard?.instantiateViewController(withIdentifier: "homeViewController") as! ViewController
+                
                 self?.navigationItem.rightBarButtonItem = nil
+                self?.addChild(homeView)
+                self?.view.addSubview(homeView.view)
+                homeView.didMove(toParent: self)
+                self?.view.isHidden = false
+                homeView.view.isHidden = false
             }
             else if named == "Shop"
             {
-                self?.shopController.view.isHidden = false
-                self?.profileController.view.isHidden = true
-                self?.aboutController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
                 self?.navigationItem.rightBarButtonItem = nil
+                
+                let shopView = self?.storyboard?.instantiateViewController(withIdentifier: "ShopViewController") as! ShopViewController
+                
+                self?.addChild(shopView)
+                self?.view.addSubview(shopView.view)
+                shopView.didMove(toParent: self)
+                self?.view.isHidden = false
+                shopView.view.isHidden = false
             }
             else if named == "Settings"
             {
-                self?.profileController.view.isHidden = true
-                self?.shopController.view.isHidden = true
-                self?.aboutController.view.isHidden = true
-                self?.profileController.view.isHidden = true
-                self?.settingsController.view.isHidden = false
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
                 self?.navigationItem.rightBarButtonItem = nil
+                self?.view.addSubview((self?.settingsController.view)!)
+                self?.settingsController.didMove(toParent: self)
+                self?.view.isHidden = false
+                self?.settingsController.view.isHidden = false
             }
             else if named == "About"
             {
-                self?.aboutController.didMove(toParent: self)
+                self?.navigationItem.rightBarButtonItem = nil
+                
+                let aboutController = self?.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+            
                 self?.view.addSubview((self?.aboutController.view)!)
                 self?.aboutController.didMove(toParent: self)
-                self?.view.isHidden = false
-                
-                self?.profileController.view.isHidden = true
-                self?.shopController.view.isHidden = true
                 self?.aboutController.view.isHidden = false
-                self?.profileController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.navigationItem.rightBarButtonItem = nil
             }
             else if named == "Profile"
             {
-                self?.shopController.view.isHidden = true
-                self?.profileController.view.isHidden = false
-                self?.aboutController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
                 self?.navigationItem.rightBarButtonItem = nil
+                
+                let profileView = self?.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                
+                self?.addChild(profileView)
+                self?.view.addSubview(profileView.view)
+                profileView.didMove(toParent: self)
+                self?.view.isHidden = false
+                profileView.view.isHidden = false
             }
             else if named == "Manage Pets"
             {
                 self?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self?.buttonAction)), animated: true)
-                self?.profileController.view.isHidden = true
-                self?.shopController.view.isHidden = true
-                self?.aboutController.view.isHidden = true
-                self?.profileController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
+                
                 let petView = self?.storyboard?.instantiateViewController(withIdentifier: "ManagePetController") as! ManagePetController
-//                let navigationControlr = UINavigationController(rootViewController: petView)
-                //navigationControlr.modalPresentationStyle = .fullScreen
+            
                 self?.addChild(petView)
                 self?.view.addSubview(petView.view)
                 petView.didMove(toParent: self)
@@ -248,14 +227,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             else if named == "Subscriptions"
             {
-                self?.profileController.view.isHidden = true
-                self?.shopController.view.isHidden = true
-                self?.aboutController.view.isHidden = true
-                self?.profileController.view.isHidden = true
-                self?.settingsController.view.isHidden = true
-                self?.subscriptionController.view.isHidden = true
-                self?.mainPetController.view.isHidden = true
+                self?.navigationItem.rightBarButtonItem = nil
+            
+                self?.view.addSubview((self?.subscriptionController.view)!)
+                self?.subscriptionController.didMove(toParent: self)
                 self?.subscriptionController.view.isHidden = false
+  
                 self?.navigationItem.rightBarButtonItem = nil
             }
             

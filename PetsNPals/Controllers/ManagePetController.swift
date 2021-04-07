@@ -21,6 +21,16 @@ class PetTableViewCell: UITableViewCell {
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
+    func setCellWithValuesOf(_ dog: Dog) {
+        petNameLabel.text = dog.name
+        breedLabel.text = "Breed: \(dog.breed)"
+        genderLabel.text = "Gender: \(dog.gender)"
+        ageLabel.text = "Age: \(String(dog.age))"
+        heightLabel.text = "Height: \(String(dog.height))"
+        commentsLabel.text = "Comments: \(dog.comment)"
+        weightLabel.text = "Weight: \(String(dog.weight))"
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -29,6 +39,7 @@ class PetTableViewCell: UITableViewCell {
 class ManagePetController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet weak var petTable: UITableView!
+    private var viewModel = ManagePetViewModel()
     
     let cellReuseIdentifier = "cell"
     
@@ -38,7 +49,8 @@ class ManagePetController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pets = db.read()
+//        pets = db.read()
+        viewModel.connectToDatabase()
  
         petTable?.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         petTable?.delegate = self
@@ -49,26 +61,30 @@ class ManagePetController: UIViewController, UITableViewDelegate, UITableViewDat
 //        db.insert(id: 3, age: 2, name: "Max", gender: "female", breed: "Weiner", weight: 14, height: 8, comments: "Good boy")
 //        db.insert(id: 4, age: 6, name: "Riley", gender: "male", breed: "Shiba", weight: 84, height: 28, comments: "Good boy")
     }
+    
+    private func loadData() {
+        viewModel.loadDataFromSQLiteDatabase()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        petTable?.reloadData()
+        super.viewWillAppear(true)
+        loadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return pets.count
+        return viewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell") as! PetTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath)
+        let object = viewModel.cellForRowAt(indexPath: indexPath)
         
-        cell.petNameLabel.text = "Name: " + pets[indexPath.row].name
-        cell.breedLabel.text = "Breed: " + pets[indexPath.row].breed
-        cell.ageLabel.text = "Age: " + String(pets[indexPath.row].age)
-        cell.genderLabel.text = "Gender: " + pets[indexPath.row].gender
-        cell.heightLabel.text = "Height: " + String(pets[indexPath.row].height)
-        cell.weightLabel.text = "Weight: " + String(pets[indexPath.row].weight)
-        cell.commentsLabel.text = "Comments: " + String(pets[indexPath.row].comments)
+        if let petCell = cell as? PetTableViewCell {
+            petCell.setCellWithValuesOf(object)
+        }
+        
     
         return cell
     }

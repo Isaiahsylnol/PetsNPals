@@ -11,6 +11,8 @@ import SQLite3
 class AddPetViewController: UIViewController, UITextViewDelegate {
     var db:DBHelper = DBHelper()
     
+    var viewModel: NewDogViewModel!
+    
     var pets:[Dog] = []
 
     @IBOutlet weak var petNameTextField: UITextField!
@@ -31,17 +33,23 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         let height = Int((petHeightTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
         let comments = (commentsTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
 
-        db.insert( age: age, name: names, gender: genders, breed: breeds, weight: weight, height: height, comments: comments)
+        // Create new dog
+        let dogValues = Dog(id: 0, age: age, name: names, gender: genders, breed: breeds, weight: weight, height: height, comment: comments)
+        createNewPet(dogValues)
+    
+        SQLiteCommands.presentRows()
        
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Array of breeds
     let breeds = ["Huskey","Labador","Poodle","Frenchie","Doberman","Boxer","Pitbull"]
     
     var pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createTable()
     
         commentsTextView?.text = "Enter comments"
         commentsTextView?.textColor = UIColor.lightGray
@@ -57,6 +65,31 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         breedTextField?.inputView = pickerView
      
         print("Everything is fine with database")
+    }
+    
+    private func createTable() {
+        let database = SQLiteDatabase.sharedInstance
+        database.createTable()
+    }
+    
+    private func createNewPet(_ dogValues:Dog) {
+        let dogAddedToTable = SQLiteCommands.insertRow(dogValues)
+        
+        if dogAddedToTable == true {
+            dismiss(animated: true, completion: nil)
+        } else {
+            print("Error:   This dog cannot be created")
+        }
+    }
+    
+    private func createNewProduct(_ prodValues:Product) {
+        let prodAddedToTable = SQLiteCommands.insertProductRow(prodValues)
+        
+        if prodAddedToTable == true {
+            dismiss(animated: true, completion: nil)
+        } else {
+            print("Error:   This product cannot be created")
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
