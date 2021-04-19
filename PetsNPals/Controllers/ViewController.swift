@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SQLite3
 import SideMenu
 import FirebaseAuth
 
@@ -53,14 +52,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
  
         let index = indexPath.row
         if index == 0 {
-            let healthController = HealthViewController()
-            self.navigationController?.pushViewController(healthController, animated: true)
+            let healthView = self.storyboard?.instantiateViewController(withIdentifier: "HealthViewController") as! HealthViewController
+            
+            navigationItem.rightBarButtonItem = nil
+            self.addChild(healthView)
+            self.view.addSubview(healthView.view)
+            healthView.didMove(toParent: self)
+            self.view.isHidden = false
+            healthView.view.isHidden = false
         }
         else if index == 2 {
-            let loginController = LoginViewController()
-            loginController.modalPresentationStyle = .fullScreen
-            self.navigationController?.present(loginController, animated: true)
-            print("Media")
+            let videoView = self.storyboard?.instantiateViewController(withIdentifier: "VideoViewController") as! VideoViewController
+            
+            navigationItem.rightBarButtonItem = nil
+            self.addChild(videoView)
+            self.view.addSubview(videoView.view)
+            videoView.didMove(toParent: self)
+            self.view.isHidden = false
+            videoView.view.isHidden = false
         }
         else if index == 3 {
             print("Shop")
@@ -83,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // The link to the various view controllers
     private let aboutController = AboutViewController()
-    private let mainPetController = ManagePetController()
+    private let mainPetController = ManagePetViewController()
     private let subscriptionController = SubscriptionViewController()
     private let shopController = ShopViewController()
     private let profileController = ProfileViewController()
@@ -106,22 +115,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         addChildControllers()
-        
-        let fileUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("PetDatabase.sqlite")
-        
-        if sqlite3_open(fileUrl.path, &db) != SQLITE_OK {
-            print("Error opening database")
-            return
-        }
-        
-        let createTableQuery = "CREATE TABLE IF NOT EXISTS pets (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, gender TEXT, age INTEGER, breed TEXT, weight INTEGER, height INTEGER, comments TEXT)"
-        
-        if sqlite3_exec(db, createTableQuery, nil, nil, nil) !=
-            SQLITE_OK{
-            print("Error creating table")
-            return
-        }
-        print("Everything is fine with database")
     }
     
     // Add our view controllers as children
@@ -193,13 +186,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             else if named == "About"
             {
+                
                 self?.navigationItem.rightBarButtonItem = nil
                 
                 let aboutController = self?.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
-            
-                self?.view.addSubview((self?.aboutController.view)!)
-                self?.aboutController.didMove(toParent: self)
-                self?.aboutController.view.isHidden = false
+                
+                self?.addChild(aboutController)
+                self?.view.addSubview(aboutController.view)
+                aboutController.didMove(toParent: self)
+                self?.view.isHidden = false
+                aboutController.view.isHidden = false
             }
             else if named == "Profile"
             {
@@ -217,7 +213,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             {
                 self?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self?.buttonAction)), animated: true)
                 
-                let petView = self?.storyboard?.instantiateViewController(withIdentifier: "ManagePetController") as! ManagePetController
+                let petView = self?.storyboard?.instantiateViewController(withIdentifier: "ManagePetViewController") as! ManagePetViewController
             
                 self?.addChild(petView)
                 self?.view.addSubview(petView.view)
@@ -285,7 +281,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else {
             leading.constant = 0
             trailling.constant = 0
-            menuOut = false 
+            menuOut = false
         }
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded()
@@ -294,7 +290,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        handleNotAuthenticated()
+        //handleNotAuthenticated()
         
         do {
             try Auth.auth().signOut()
@@ -303,13 +299,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("failed to sign out")
         }
     }
+    
     private func handleNotAuthenticated() {
         // Check auth status
         if Auth.auth().currentUser == nil {
-//            // Show log in
-//            let loginVc = LoginViewController()
-//            loginVc.modalPresentationStyle = .fullScreen
-//            present(loginVc, animated: false)
+            // Show log in
+            let loginVc = LoginViewController()
+            loginVc.modalPresentationStyle = .fullScreen
+            present(loginVc, animated: false)
         }
     }
 }

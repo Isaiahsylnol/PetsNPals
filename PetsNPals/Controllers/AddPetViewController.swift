@@ -9,11 +9,6 @@ import UIKit
 import SQLite3
 
 class AddPetViewController: UIViewController, UITextViewDelegate {
-    var db:DBHelper = DBHelper()
-    
-    var viewModel: NewDogViewModel!
-    
-    var pets:[Dog] = []
 
     @IBOutlet weak var petNameTextField: UITextField!
     @IBOutlet weak var breedTextField: UITextField!
@@ -34,10 +29,12 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         let comments = (commentsTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
 
         // Create new dog
-        let dogValues = Dog(id: 0, age: age, name: names, gender: genders, breed: breeds, weight: weight, height: height, comment: comments)
-        createNewPet(dogValues)
-    
-        SQLiteCommands.presentRows()
+        let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petAgeTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
+        
+        let isSave = ModelManager.getInstance().SavePet(pet: pet)
+        print("isSve: -\(isSave)")
+        _ = navigationController?.popViewController(animated: true)
+       // createNewPet(dogValues)
        
         self.dismiss(animated: true, completion: nil)
     }
@@ -68,28 +65,7 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     }
     
     private func createTable() {
-        let database = SQLiteDatabase.sharedInstance
-        database.createTable()
-    }
-    
-    private func createNewPet(_ dogValues:Dog) {
-        let dogAddedToTable = SQLiteCommands.insertRow(dogValues)
-        
-        if dogAddedToTable == true {
-            dismiss(animated: true, completion: nil)
-        } else {
-            print("Error:   This dog cannot be created")
-        }
-    }
-    
-    private func createNewProduct(_ prodValues:Product) {
-        let prodAddedToTable = SQLiteCommands.insertProductRow(prodValues)
-        
-        if prodAddedToTable == true {
-            dismiss(animated: true, completion: nil)
-        } else {
-            print("Error:   This product cannot be created")
-        }
+         
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
