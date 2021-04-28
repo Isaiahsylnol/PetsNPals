@@ -52,8 +52,17 @@ class ModelManager{
         return dogs
     }
     
+    // Update Pet Info
+    func updatePet(pet: DogModel) ->Bool {
+        shareInstance.database?.open()
+        
+        let isUpdate = shareInstance.database?.executeUpdate("UPDATE dog SET name=?, gender=?, breed=?, weight=?, height=?, comment=? WHERE id=?", withArgumentsIn: [pet.name, pet.gender, pet.breed, pet.weight, pet.height, pet.comment, pet.id])
+        shareInstance.database?.close()
+        return isUpdate!
+    }
     
-//    Product Queiries
+    
+    // Product Queiries
     func getAllProducts() -> [ProductModel]{
         shareInstance.database?.open()
         var products = [ProductModel]()

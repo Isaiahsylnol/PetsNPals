@@ -272,21 +272,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
-    @IBAction func menuTapped(_ sender: Any) {
-        if menuOut == false {
-            leading.constant = 150
-            trailling.constant = -150
-            menuOut = true
-        }else {
-            leading.constant = 0
-            trailling.constant = 0
-            menuOut = false
-        }
-        
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded()
-        })
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

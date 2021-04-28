@@ -19,24 +19,27 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var petHeightTextField: UITextField!
     @IBOutlet weak var commentsTextView: UITextView!
     
+    var headerTitle = ""
+    var petData: DogModel?
+    
     @IBAction func saveButton(_ sender: Any) {
-        let names = (petNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-        let breeds = (breedTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-        let genders = (petGenderTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-        let age = Int((petAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
-        let weight = Int((petWeightTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
-        let height = Int((petHeightTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)!
-        let comments = (commentsTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
-
         // Create new dog
-        let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petAgeTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
         
-        let isSave = ModelManager.getInstance().SavePet(pet: pet)
-        print("isSve: -\(isSave)")
-        _ = navigationController?.popViewController(animated: true)
-       // createNewPet(dogValues)
-       
-        self.dismiss(animated: true, completion: nil)
+        if headerTitle != ""{
+            let pet = DogModel(  id: petData!.id, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text!)
+            let isUpdate = ModelManager.getInstance().updatePet(pet: pet)
+            print("isUpdate: - \(isUpdate)")
+        }
+        else {
+            let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petAgeTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
+            
+            let isSave = ModelManager.getInstance().SavePet(pet: pet)
+            print("isSve: -\(isSave)")
+            _ = navigationController?.popViewController(animated: true)
+           // createNewPet(dogValues)
+           
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // Array of breeds
@@ -46,6 +49,17 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if headerTitle != ""{
+            self.title = headerTitle
+            petNameTextField.text = petData?.name
+            petGenderTextField.text = petData?.gender
+            petWeightTextField.text = String(petData!.weight)
+            petHeightTextField.text = String(petData!.height)
+            breedTextField.text = petData?.breed
+            petAgeTextField.text = String(petData!.age)
+            commentsTextView.text = petData!.comment
+        }
         createTable()
     
         commentsTextView?.text = "Enter comments"

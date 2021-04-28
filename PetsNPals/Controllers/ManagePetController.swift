@@ -16,6 +16,19 @@ class ManagePetViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var editPetButton: UIButton!
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            petTableView.beginUpdates()
+            pets.remove(at: indexPath.row)
+            petTableView.deleteRows(at: [indexPath], with: .fade)
+            petTableView.endUpdates()
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         pets = ModelManager.getInstance().getAllPets()
@@ -35,12 +48,21 @@ extension ManagePetViewController: UITableViewDelegate, UITableViewDataSource {
         cell.weightLabel.text = "Weight: \(pets[indexPath.row].weight)"
         cell.heightLabel.text = "Height: \(pets[indexPath.row].height)"
         cell.ageLabel.text = "Age: \(pets[indexPath.row].age)"
-        cell.genderLabel.text = "Gender: \(pets[indexPath.row].gender)"
-        cell.commentsLabel.text = "Note: \(pets[indexPath.row].comment)"
+        cell.editPetButton.tag = indexPath.row
+        cell.deletePetButton.tag = indexPath.row
+        cell.editPetButton.addTarget(self, action: #selector(onClickEdit), for: .touchUpInside)
+        cell.deletePetButton.addTarget(self, action: #selector(onClickEdit), for: .touchUpInside)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 240
+    }
+    
+    @objc func onClickEdit(_ sender: UIButton){
+        let vc = storyboard?.instantiateViewController(identifier: "AddPetViewController") as! AddPetViewController
+        vc.petData = pets[sender.tag]
+        vc.headerTitle = "update"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

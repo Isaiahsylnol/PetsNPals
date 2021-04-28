@@ -11,11 +11,13 @@ class PetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var deletePetButton: UIButton!
+    @IBOutlet weak var editPetButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
