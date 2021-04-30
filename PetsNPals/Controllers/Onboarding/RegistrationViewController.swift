@@ -103,8 +103,13 @@ class RegistrationViewController: UIViewController {
         guard let email = emailField.text, !email.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8,
               let username = usernameField.text, !username.isEmpty else {
+            print("failed Registration")
                 return
               }
+        let user = UserModel(id: 0, name: nil, username: username, email: email, password: password, address: nil, phone: nil, phone2: nil)
+        
+        let isSave = ModelManager.getInstance().SaveUser(user: user)
+        print("isSve: -\(isSave)")
         self.dismiss(animated: true, completion: nil)
         present(UINavigationController(rootViewController: home), animated: true)
         AuthManager.shared.registerNewUser(username: username, email: email, password: password) { registered in

@@ -21,7 +21,39 @@ class ModelManager{
         return shareInstance
     }
     
-    // Saving Partner Data
+    // Saving User Data
+    func SaveUser(user : UserModel) -> Bool {
+        shareInstance.database?.open()
+        
+        let isSave = shareInstance.database?.executeUpdate("INSERT INTO User (name, username, email, password, address, phone, phone2) VALUES(?,?,?,?,?,?,?)", withArgumentsIn: [nil, user.username, user.email, user.password, nil, nil, nil])
+        
+        shareInstance.database?.close()
+        return isSave!
+    }
+    
+    // Fetch - User data
+    func getAllUsers() -> [UserModel]{
+        shareInstance.database?.open()
+        var users = [UserModel]()
+        do{
+            let resultSet: FMResultSet? = try shareInstance.database?.executeQuery("SELECT * FROM User", values: nil)
+            
+            if resultSet != nil{
+                while resultSet!.next() {
+                    
+                    let user = UserModel(id: Int(resultSet!.int(forColumn: "id")), name: resultSet!.string(forColumn: "name"), username: resultSet!.string(forColumn: "username")!, email: resultSet!.string(forColumn: "email")!, password: resultSet!.string(forColumn: "password")!, address: resultSet!.string(forColumn: "address"), phone: resultSet!.string(forColumn: "phone"), phone2: (resultSet!.string(forColumn: "phone2")))
+                    users.append(user)
+                }
+            }
+        }
+        catch let err{
+            print(err.localizedDescription)
+        }
+        shareInstance.database?.close()
+        return users
+    }
+    
+    // Save - Partner Data
     func SavePet(pet : DogModel) -> Bool {
         shareInstance.database?.open()
         
@@ -31,6 +63,7 @@ class ModelManager{
         return isSave!
     }
     
+    // Fetch - Pet data
     func getAllPets() -> [DogModel]{
         shareInstance.database?.open()
         var dogs = [DogModel]()
@@ -52,7 +85,7 @@ class ModelManager{
         return dogs
     }
     
-    // Update Pet Info
+    // Update - Pet Info
     func updatePet(pet: DogModel) ->Bool {
         shareInstance.database?.open()
         
@@ -61,6 +94,16 @@ class ModelManager{
         return isUpdate!
     }
     
+    // Delete Pet Record
+    func deletePet(dog: DogModel)
+    -> Bool {
+        shareInstance.database?.open()
+        
+        let isDeleted = shareInstance.database?.executeUpdate("DELETE FROM dog WHERE id=?", withArgumentsIn: [dog.id])
+        
+        shareInstance.database?.close()
+        return isDeleted!
+    }
     
     // Product Queiries
     func getAllProducts() -> [ProductModel]{

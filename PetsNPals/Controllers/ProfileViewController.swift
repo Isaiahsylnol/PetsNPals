@@ -9,8 +9,23 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phone2TextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    
+    var users = [UserModel]()
+    let user = ModelManager.getInstance().getAllUsers()
+    @IBAction func saveEditButton(_ sender: Any) {
+        view.overrideUserInterfaceStyle = .dark
+        super.overrideUserInterfaceStyle = .dark
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(user[0].username)
+        nameTextField.text = user[0].username
 
         // Do any additional setup after loading the view.
     }

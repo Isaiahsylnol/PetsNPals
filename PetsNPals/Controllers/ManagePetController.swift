@@ -22,11 +22,24 @@ class ManagePetViewController: UIViewController {
         return .delete
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Sliding delete functionality 
         if editingStyle == .delete {
-            petTableView.beginUpdates()
-            pets.remove(at: indexPath.row)
-            petTableView.deleteRows(at: [indexPath], with: .fade)
-            petTableView.endUpdates()
+            let actionSheet = UIAlertController(title: "",
+                                                message: "Are you sure you want delete this pet?",
+                                                preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                                style: .cancel, handler: nil))
+            actionSheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [self]_ in
+                
+                petTableView.beginUpdates()
+                let isDeleted = ModelManager.getInstance().deletePet(dog: pets[indexPath.row])
+                pets.remove(at: indexPath.row)
+                petTableView.deleteRows(at: [indexPath], with: .fade)
+                petTableView.endUpdates()
+                petTableView.reloadData()
+                print("isDelete: \(isDeleted)")
+            }))
+            self.present(actionSheet, animated: true)
         }
     }
     
@@ -48,10 +61,8 @@ extension ManagePetViewController: UITableViewDelegate, UITableViewDataSource {
         cell.weightLabel.text = "Weight: \(pets[indexPath.row].weight)"
         cell.heightLabel.text = "Height: \(pets[indexPath.row].height)"
         cell.ageLabel.text = "Age: \(pets[indexPath.row].age)"
-        cell.editPetButton.tag = indexPath.row
-        cell.deletePetButton.tag = indexPath.row
-        cell.editPetButton.addTarget(self, action: #selector(onClickEdit), for: .touchUpInside)
-        cell.deletePetButton.addTarget(self, action: #selector(onClickEdit), for: .touchUpInside)
+        cell.genderLabel.text = "Gender: \(pets[indexPath.row].gender)"
+       
         return cell
     }
     

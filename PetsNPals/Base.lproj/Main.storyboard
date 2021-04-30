@@ -141,6 +141,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveEditButton:" destination="SM7-fc-TqB" eventType="touchUpInside" id="x5k-OJ-qeH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -163,6 +166,13 @@
                             <constraint firstItem="NeE-V2-Gz9" firstAttribute="top" secondItem="87o-Hr-X8D" secondAttribute="top" constant="33" id="rZb-X3-LH9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="TJb-At-oF5" id="FFt-u4-VGs"/>
+                        <outlet property="emailTextField" destination="7p5-aM-JML" id="8Vb-W7-qda"/>
+                        <outlet property="nameTextField" destination="u3F-Sh-gv9" id="dyO-pG-cSa"/>
+                        <outlet property="phone2TextField" destination="vpN-Z7-n97" id="R45-zU-5D4"/>
+                        <outlet property="phoneTextField" destination="AUt-kM-w4O" id="Gnh-tM-M2e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7E-Kb-nFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -684,18 +694,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ccy-bu-mng">
-                                                    <rect key="frame" x="306" y="10.5" width="45.5" height="96.5"/>
+                                                    <rect key="frame" x="295" y="58" width="56.5" height="49"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-OK-12b">
-                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                                            <state key="normal" title="Delete"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-id-dV3">
-                                                            <rect key="frame" x="0.0" y="38" width="30" height="30"/>
-                                                            <state key="normal" title="Edit"/>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2T-ud-7FJ">
-                                                            <rect key="frame" x="0.0" y="76" width="45.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="45.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFw-u1-okq">
+                                                            <rect key="frame" x="0.0" y="28.5" width="56.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -713,8 +721,7 @@
                                         <connections>
                                             <outlet property="ageLabel" destination="iLG-tC-1Tz" id="mAB-Z4-fK2"/>
                                             <outlet property="breedLabel" destination="F2T-ud-7FJ" id="ltB-7i-MSC"/>
-                                            <outlet property="deletePetButton" destination="Mv5-OK-12b" id="4id-vM-hfO"/>
-                                            <outlet property="editPetButton" destination="KiE-id-dV3" id="b7e-G4-CBR"/>
+                                            <outlet property="genderLabel" destination="QFw-u1-okq" id="Ws5-yK-y36"/>
                                             <outlet property="heightLabel" destination="Mlh-tD-IVI" id="gk0-PL-ImO"/>
                                             <outlet property="nameLabel" destination="EfF-QI-eJ5" id="pMw-Mm-7vd"/>
                                             <outlet property="weightLabel" destination="YDH-DY-fly" id="G6p-fw-Ivh"/>

@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var trailling: NSLayoutConstraint!
     @IBOutlet var leading: NSLayoutConstraint!
-    
+ 
     var menuOut = false
     
     // The link to the various view controllers
@@ -100,8 +100,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         // Titles for the various navigation menu selections
         // Applications various presentable screens
         let menu = MenuController(with: ["Home", "Shop", "Subscriptions", "Settings", "Profile", "Manage Pets" , "About" ,"Logout"])
@@ -112,8 +110,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         
         cells = createArray()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView?.delegate = self
+        tableView?.dataSource = self
         addChildControllers()
     }
     

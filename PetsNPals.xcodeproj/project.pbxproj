@@ -54,6 +54,7 @@
 		40BF30C22624F93000A5314D /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF30C12624F93000A5314D /* ProductModel.swift */; };
 		40BF30C72624F96100A5314D /* PetsNPalsDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 40BF30C62624F96100A5314D /* PetsNPalsDB.db */; };
 		40BF30CD2624FA0F00A5314D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */; };
+		40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECFF3A263B2351008F97E9 /* UserModel.swift */; };
 		6B20F4D41998F869F14015C6 /* Pods_PetsNPalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */; };
 		8A526FDB993C91988694E118 /* Pods_PetsNPals_PetsNPalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032682ADB53308ACEB4B05D9 /* Pods_PetsNPals_PetsNPalsUITests.framework */; };
 		F0503439FBE26C602CADA90D /* Pods_PetsNPals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5493A61D5B17F30D7052A4 /* Pods_PetsNPals.framework */; };
@@ -141,6 +142,7 @@
 		40BF30C12624F93000A5314D /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		40BF30C62624F96100A5314D /* PetsNPalsDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = PetsNPalsDB.db; sourceTree = "<group>"; };
 		40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		40ECFF3A263B2351008F97E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPalsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DF84C4988B4954F0DF25DF /* Pods-PetsNPalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPalsTests.release.xcconfig"; path = "Target Support Files/Pods-PetsNPalsTests/Pods-PetsNPalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C59D12C25E310849715473EF /* Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPals-PetsNPalsUITests/Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				40BF30BC2624F92700A5314D /* DogModel.swift */,
 				40BF30B42624F91100A5314D /* ModelManager.swift */,
 				40BF30C12624F93000A5314D /* ProductModel.swift */,
+				40ECFF3A263B2351008F97E9 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				40A0217D2609300B007F287B /* SwitchTableViewCell.swift in Sources */,
 				40A0FF362606F945005819E0 /* ManagePetController.swift in Sources */,
 				40A0217726092CB4007F287B /* SettingsViewController.swift in Sources */,
+				40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */,
 				40997E55260E67C90046D0B8 /* Extensions.swift in Sources */,
 				40AF501D260AA8160062B706 /* DBHelper.swift in Sources */,
 				40BF30BD2624F92800A5314D /* DogModel.swift in Sources */,

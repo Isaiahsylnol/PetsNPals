@@ -24,17 +24,21 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func saveButton(_ sender: Any) {
         // Create new dog
-        
         if headerTitle != ""{
             let pet = DogModel(  id: petData!.id, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text!)
             let isUpdate = ModelManager.getInstance().updatePet(pet: pet)
+            
             print("isUpdate: - \(isUpdate)")
+            
+            _ = navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
         else {
-            let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petAgeTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
+            let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
             
             let isSave = ModelManager.getInstance().SavePet(pet: pet)
             print("isSve: -\(isSave)")
+            
             _ = navigationController?.popViewController(animated: true)
            // createNewPet(dogValues)
            
@@ -60,7 +64,6 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
             petAgeTextField.text = String(petData!.age)
             commentsTextView.text = petData!.comment
         }
-        createTable()
     
         commentsTextView?.text = "Enter comments"
         commentsTextView?.textColor = UIColor.lightGray
@@ -69,17 +72,12 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         commentsTextView?.layer.borderWidth = 1
         commentsTextView?.layer.borderColor = UIColor.lightGray.cgColor
  
-        // Do any additional setup after loading the view.
         pickerView.delegate = self
         pickerView.dataSource = self
         
         breedTextField?.inputView = pickerView
      
         print("Everything is fine with database")
-    }
-    
-    private func createTable() {
-         
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
