@@ -710,17 +710,24 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRG-RK-2Ag">
+                                                    <rect key="frame" x="364" y="33" width="30" height="30"/>
+                                                    <state key="normal" title="Edit"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="qRG-RK-2Ag" firstAttribute="top" secondItem="968-Uk-sEe" secondAttribute="top" constant="33" id="1P8-0Z-4Qw"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ccy-bu-mng" secondAttribute="trailing" constant="62.5" id="JdC-xb-4vV"/>
                                                 <constraint firstItem="vUu-aI-gTo" firstAttribute="leading" secondItem="968-Uk-sEe" secondAttribute="leading" constant="22" id="M9v-f8-Cca"/>
                                                 <constraint firstAttribute="bottom" secondItem="vUu-aI-gTo" secondAttribute="bottom" constant="60" id="Uqy-tf-Ckw"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ccy-bu-mng" secondAttribute="bottom" constant="60" id="Y9H-xg-Vbu"/>
+                                                <constraint firstAttribute="trailing" secondItem="qRG-RK-2Ag" secondAttribute="trailing" constant="20" symbolic="YES" id="hNH-uI-dms"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ageLabel" destination="iLG-tC-1Tz" id="mAB-Z4-fK2"/>
                                             <outlet property="breedLabel" destination="F2T-ud-7FJ" id="ltB-7i-MSC"/>
+                                            <outlet property="editPetButton" destination="qRG-RK-2Ag" id="FRS-lP-cZa"/>
                                             <outlet property="genderLabel" destination="QFw-u1-okq" id="Ws5-yK-y36"/>
                                             <outlet property="heightLabel" destination="Mlh-tD-IVI" id="gk0-PL-ImO"/>
                                             <outlet property="nameLabel" destination="EfF-QI-eJ5" id="pMw-Mm-7vd"/>

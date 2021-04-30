@@ -62,6 +62,8 @@ extension ManagePetViewController: UITableViewDelegate, UITableViewDataSource {
         cell.heightLabel.text = "Height: \(pets[indexPath.row].height)"
         cell.ageLabel.text = "Age: \(pets[indexPath.row].age)"
         cell.genderLabel.text = "Gender: \(pets[indexPath.row].gender)"
+        cell.editPetButton.tag = indexPath.row
+        cell.editPetButton.addTarget(self, action: #selector(onClickEdit(_:)), for: .touchUpInside)
        
         return cell
     }

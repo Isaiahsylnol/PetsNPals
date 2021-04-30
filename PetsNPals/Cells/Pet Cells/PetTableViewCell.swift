@@ -15,6 +15,7 @@ class PetTableViewCell: UITableViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var editPetButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
