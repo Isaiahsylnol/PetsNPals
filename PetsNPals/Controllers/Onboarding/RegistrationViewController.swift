@@ -106,7 +106,7 @@ class RegistrationViewController: UIViewController {
             print("failed Registration")
                 return
               }
-        let user = UserModel(id: 0, name: nil, username: username, email: email, password: password, address: nil, phone: nil, phone2: nil)
+        let user = UserModel(id: 0, name: "", username: username, email: email, password: password, address: "", phone: "", phone2: "")
         
         let isSave = ModelManager.getInstance().SaveUser(user: user)
         print("isSve: -\(isSave)")

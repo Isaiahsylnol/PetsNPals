@@ -31,7 +31,29 @@ class ModelManager{
         return isSave!
     }
     
-    // Fetch - User data
+    // Fetch Single - User data
+    func findUser(user_id: Int) -> [UserModel] {
+        shareInstance.database?.open()
+        var users = [UserModel]()
+        do{
+            let resultSet: FMResultSet? = try shareInstance.database?.executeQuery("SELECT * FROM User WHERE id=?", withArgumentsIn: [user_id])
+            
+            if resultSet != nil{
+                while resultSet!.next() {
+                    
+                    let user = UserModel(id: Int(resultSet!.int(forColumn: "id")), name: resultSet!.string(forColumn: "name"), username: resultSet!.string(forColumn: "username")!, email: resultSet!.string(forColumn: "email")!, password: resultSet!.string(forColumn: "password")!, address: resultSet!.string(forColumn: "address"), phone: resultSet!.string(forColumn: "phone"), phone2: (resultSet!.string(forColumn: "phone2")))
+                    users.append(user)
+                }
+            }
+        }
+        catch let err{
+            print(err.localizedDescription)
+        }
+        shareInstance.database?.close()
+        return users
+    }
+    
+    // Fetch All - User data
     func getAllUsers() -> [UserModel]{
         shareInstance.database?.open()
         var users = [UserModel]()

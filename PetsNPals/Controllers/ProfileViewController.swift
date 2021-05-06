@@ -16,16 +16,21 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var phone2TextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
-    var users = [UserModel]()
-    let user = ModelManager.getInstance().getAllUsers()
+    let user = ModelManager.getInstance().findUser(user_id: 1)
     @IBAction func saveEditButton(_ sender: Any) {
         view.overrideUserInterfaceStyle = .dark
         super.overrideUserInterfaceStyle = .dark
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(user[0].username)
-        nameTextField.text = user[0].username
+        //print(user[0].username)
+        print(user)
+        nameTextField.text = user[0].name
+        emailTextField.text = user[0].email
+        addressTextField.text = user[0].address
+        phoneTextField.text = user[0].phone
+        phone2TextField.text = user[0].phone2
+        
 
         // Do any additional setup after loading the view.
     }
