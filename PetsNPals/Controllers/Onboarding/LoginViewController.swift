@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 import SafariServices
 
 class LoginViewController: UIViewController {
+    
+    let userDefaults = UserDefaults()
     
     struct Constants {
         static let cornerRadius: CGFloat = 8.0
@@ -212,10 +215,14 @@ class LoginViewController: UIViewController {
         }
         
         AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 if success {
                     // user logged in
                     print("Login success")
+                    
+                    let user = Auth.auth().currentUser?.email
+                    userDefaults.setValue(user, forKey: "currentUser")
+
                     self.dismiss(animated: true, completion: nil)
                 }
                 else {

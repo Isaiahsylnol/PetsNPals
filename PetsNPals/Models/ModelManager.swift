@@ -32,11 +32,11 @@ class ModelManager{
     }
     
     // Fetch Single - User data
-    func findUser(user_id: Int) -> [UserModel] {
+    func findUser(user_email: String) -> [UserModel] {
         shareInstance.database?.open()
         var users = [UserModel]()
         do{
-            let resultSet: FMResultSet? = try shareInstance.database?.executeQuery("SELECT * FROM User WHERE id=?", withArgumentsIn: [user_id])
+            let resultSet: FMResultSet? = try shareInstance.database?.executeQuery("SELECT * FROM User WHERE email=?", withArgumentsIn: [user_email])
             
             if resultSet != nil{
                 while resultSet!.next() {

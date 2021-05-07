@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     private var sideMenu: SideMenuNavigationController?
     @IBOutlet weak var tableView: UITableView!
+    let userDefaults = UserDefaults()
  
     var cells: [Cell] = []
     
@@ -100,6 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        handleNotAuthenticated()
         // Titles for the various navigation menu selections
         // Applications various presentable screens
         let menu = MenuController(with: ["Home", "Shop", "Subscriptions", "Settings", "Profile", "Manage Pets" , "About" ,"Logout"])
@@ -241,6 +243,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     AuthManager.shared.logOut(completion: { success in
                         DispatchQueue.main.async {
                             if success {
+                                self!.userDefaults.removeObject(forKey: "currentUser")
                                 // Present log in
                                 let loginVC = LoginViewController()
                                 // Present as fullscreen
@@ -273,7 +276,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //handleNotAuthenticated()
+        
+        //print(Auth.auth().currentUser?.uid)
+        let test = userDefaults.value(forKey: "currentUser")
+        print(test!)
         
         do {
             try Auth.auth().signOut()
@@ -285,7 +291,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func handleNotAuthenticated() {
         // Check auth status
-        if Auth.auth().currentUser == nil {
+        let user = userDefaults.value(forKey: "currentUser")
+        if user == nil {
             // Show log in
             let loginVc = LoginViewController()
             loginVc.modalPresentationStyle = .fullScreen
