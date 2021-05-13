@@ -21,11 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func createArray() -> [Cell] {
         var homeCells: [Cell] = []
         
-        let health = Cell(image: UIImage(named: "healthcare1.jpg")!, title: "Healthcare Tips", date: "")
-        let news = Cell(image: UIImage(named: "pet_news.jpg")!, title: "Latest News", date: "")
-        let media = Cell(image: UIImage(named: "media.png")!, title: "Media", date: "")
-        let shop = Cell(image: UIImage(named: "toys1.png")!, title: "Shop", date: "")
-        let recommened = Cell(image: UIImage(named: "dog_house.jpg")!, title: "Recommended", date: "")
+        let health = Cell(image: UIImage(named: "healthcare1.jpg")!, title: "Healthcare Tips")
+        let news = Cell(image: UIImage(named: "pet_news.jpg")!, title: "Latest News")
+        let media = Cell(image: UIImage(named: "media.png")!, title: "Media")
+        let shop = Cell(image: UIImage(named: "toys1.png")!, title: "Shop")
+        let recommened = Cell(image: UIImage(named: "dog_house.jpg")!, title: "Recommended")
 
         homeCells.append(health)
         homeCells.append(news)
@@ -166,7 +166,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             else if named == "Shop"
             {
-                self?.navigationItem.rightBarButtonItem = nil
+                self?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self?.buttonAction)), animated: true)
                 
                 let shopView = self?.storyboard?.instantiateViewController(withIdentifier: "ShopViewController") as! ShopViewController
                 

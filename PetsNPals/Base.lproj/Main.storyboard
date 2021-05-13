@@ -263,6 +263,17 @@
                                     <constraint firstAttribute="height" constant="198" id="phv-Uv-Myy"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fp-48-B91">
+                                <rect key="frame" x="30" y="453" width="351" height="43"/>
+                                <color key="backgroundColor" red="0.97450488810000002" green="0.5299170017" blue="0.097119472920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="351" id="2gh-0U-YgI"/>
+                                    <constraint firstAttribute="height" constant="43" id="4J0-wK-1dW"/>
+                                </constraints>
+                                <state key="normal" title="Add to cart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vQi-7t-Pdt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -270,6 +281,7 @@
                             <constraint firstItem="crq-X7-zIC" firstAttribute="top" secondItem="6dk-yb-QJw" secondAttribute="bottom" constant="50" id="0eJ-AI-Lar"/>
                             <constraint firstItem="6dk-yb-QJw" firstAttribute="leading" secondItem="vQi-7t-Pdt" secondAttribute="leading" constant="30" id="24E-VK-BWY"/>
                             <constraint firstItem="crq-X7-zIC" firstAttribute="leading" secondItem="vQi-7t-Pdt" secondAttribute="leading" constant="30" id="4Hc-uv-uc9"/>
+                            <constraint firstItem="9Fp-48-B91" firstAttribute="top" secondItem="CTg-8q-HG8" secondAttribute="bottom" id="4JP-9z-S1b"/>
                             <constraint firstItem="CTg-8q-HG8" firstAttribute="leading" secondItem="vQi-7t-Pdt" secondAttribute="leading" constant="30" id="7hU-0u-Guu"/>
                             <constraint firstItem="vQi-7t-Pdt" firstAttribute="trailing" secondItem="6dk-yb-QJw" secondAttribute="trailing" constant="30" id="8pq-i7-b1P"/>
                             <constraint firstItem="6dk-yb-QJw" firstAttribute="top" secondItem="AOk-n4-Wg6" secondAttribute="bottom" constant="19" id="9cD-g6-1XH"/>
@@ -286,8 +298,10 @@
                             <constraint firstItem="pv4-zq-2c1" firstAttribute="top" secondItem="eHH-ve-2jg" secondAttribute="bottom" constant="8" symbolic="YES" id="b0Q-Oz-TwY"/>
                             <constraint firstItem="6dk-yb-QJw" firstAttribute="top" secondItem="mZh-lO-g5F" secondAttribute="bottom" constant="16" id="egK-4y-uBS"/>
                             <constraint firstItem="mZh-lO-g5F" firstAttribute="leading" secondItem="pv4-zq-2c1" secondAttribute="trailing" constant="22" id="gbc-CB-DIV"/>
+                            <constraint firstItem="vQi-7t-Pdt" firstAttribute="trailing" secondItem="9Fp-48-B91" secondAttribute="trailing" constant="33" id="gob-Su-Jr5"/>
                             <constraint firstItem="CTg-8q-HG8" firstAttribute="top" secondItem="crq-X7-zIC" secondAttribute="bottom" constant="17" id="jFk-bM-rq9"/>
                             <constraint firstItem="AOk-n4-Wg6" firstAttribute="top" secondItem="eHH-ve-2jg" secondAttribute="bottom" constant="18" id="kFZ-Gd-eQy"/>
+                            <constraint firstItem="9Fp-48-B91" firstAttribute="leading" secondItem="vQi-7t-Pdt" secondAttribute="leading" constant="30" id="nMz-vc-tcU"/>
                             <constraint firstItem="AOk-n4-Wg6" firstAttribute="leading" secondItem="vQi-7t-Pdt" secondAttribute="leading" constant="30" id="uv3-Th-83A"/>
                         </constraints>
                     </view>
@@ -302,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsT-bE-Z2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="-108"/>
+            <point key="canvasLocation" x="3044.9275362318845" y="-108.48214285714285"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Cqr-5e-KUt">
@@ -626,6 +640,13 @@
                                     <outlet property="delegate" destination="bHh-lq-Mqx" id="jkl-Dj-PdI"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7n-mM-BSp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Shop" id="QKX-wL-BfO"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vG2-v6-JpC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

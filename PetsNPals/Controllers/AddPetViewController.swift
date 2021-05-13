@@ -34,10 +34,11 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
             self.dismiss(animated: true, completion: nil)
         }
         else {
-            let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
-            
-            let isSave = ModelManager.getInstance().SavePet(pet: pet)
-            print("isSve: -\(isSave)")
+            let ima = (UIImage(named: "royal_canin_french_bulldog.png")?.pngData())!
+            let newProd = ProductModel(id: 0, url: "Test_URL", name: "Product_name", breed: "Rec_Breed", price: 99.99, supplier: "test_sup", rating: 4, description: "Only a test", image: ima)
+                    
+                    let isSave = ModelManager.getInstance().SaveProduct(prod: newProd)
+                    print("isSve: -\(isSave)")
             
             _ = navigationController?.popViewController(animated: true)
            // createNewPet(dogValues)

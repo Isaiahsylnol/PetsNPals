@@ -39,3 +39,13 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 }
+
+class Cell {
+    var image: UIImage
+    var title: String
+
+    init(image: UIImage, title: String){
+        self.image = image
+        self.title = title
+    }
+}

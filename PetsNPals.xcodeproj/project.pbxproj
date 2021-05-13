@@ -14,7 +14,6 @@
 		400977B2262D1B42003E84A9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 400977AD262D1B42003E84A9 /* FMResultSet.m */; };
 		400977D8262D1FA0003E84A9 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977D7262D1FA0003E84A9 /* PetTableViewCell.swift */; };
 		400977DE262D1FCB003E84A9 /* HealthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977DC262D1FCA003E84A9 /* HealthTableViewCell.swift */; };
-		400977DF262D1FCB003E84A9 /* HealthPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977DD262D1FCB003E84A9 /* HealthPost.swift */; };
 		400977E7262D2057003E84A9 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977E6262D2057003E84A9 /* VideoViewController.swift */; };
 		400977EE262D208B003E84A9 /* VideoPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977EC262D208B003E84A9 /* VideoPostTableViewCell.swift */; };
 		400977EF262D208B003E84A9 /* VideoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977ED262D208B003E84A9 /* VideoPost.swift */; };
@@ -31,7 +30,6 @@
 		40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A021812609306B007F287B /* SettingTableViewCell.swift */; };
 		40A0218D26094115007F287B /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0218C26094115007F287B /* SubscriptionTableViewCell.swift */; };
 		40A0219526097D4C007F287B /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0219426097D4C007F287B /* SubscriptionViewController.swift */; };
-		40A0219D260990E3007F287B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0219C260990E3007F287B /* Cell.swift */; };
 		40A0FEBB2604F240005819E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FEBA2604F240005819E0 /* AppDelegate.swift */; };
 		40A0FEBD2604F240005819E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FEBC2604F240005819E0 /* SceneDelegate.swift */; };
 		40A0FEBF2604F240005819E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0FEBE2604F240005819E0 /* ViewController.swift */; };
@@ -55,6 +53,8 @@
 		40BF30C72624F96100A5314D /* PetsNPalsDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 40BF30C62624F96100A5314D /* PetsNPalsDB.db */; };
 		40BF30CD2624FA0F00A5314D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */; };
 		40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECFF3A263B2351008F97E9 /* UserModel.swift */; };
+		40FF8316264CE5CC00416139 /* PostAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF8315264CE5CC00416139 /* PostAPIModel.swift */; };
+		40FF831B264CE60F00416139 /* PostContentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF831A264CE60F00416139 /* PostContentAPI.swift */; };
 		6B20F4D41998F869F14015C6 /* Pods_PetsNPalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */; };
 		8A526FDB993C91988694E118 /* Pods_PetsNPals_PetsNPalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032682ADB53308ACEB4B05D9 /* Pods_PetsNPals_PetsNPalsUITests.framework */; };
 		F0503439FBE26C602CADA90D /* Pods_PetsNPals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5493A61D5B17F30D7052A4 /* Pods_PetsNPals.framework */; };
@@ -96,7 +96,6 @@
 		400977AD262D1B42003E84A9 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		400977D7262D1FA0003E84A9 /* PetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		400977DC262D1FCA003E84A9 /* HealthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTableViewCell.swift; sourceTree = "<group>"; };
-		400977DD262D1FCB003E84A9 /* HealthPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPost.swift; sourceTree = "<group>"; };
 		400977E6262D2057003E84A9 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		400977EC262D208B003E84A9 /* VideoPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostTableViewCell.swift; sourceTree = "<group>"; };
 		400977ED262D208B003E84A9 /* VideoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPost.swift; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		40A021812609306B007F287B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		40A0218C26094115007F287B /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		40A0219426097D4C007F287B /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
-		40A0219C260990E3007F287B /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		40A0FEB72604F240005819E0 /* PetsNPals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsNPals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A0FEBA2604F240005819E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A0FEBC2604F240005819E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +141,8 @@
 		40BF30C62624F96100A5314D /* PetsNPalsDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = PetsNPalsDB.db; sourceTree = "<group>"; };
 		40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		40ECFF3A263B2351008F97E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		40FF8315264CE5CC00416139 /* PostAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIModel.swift; sourceTree = "<group>"; };
+		40FF831A264CE60F00416139 /* PostContentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentAPI.swift; sourceTree = "<group>"; };
 		720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPalsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DF84C4988B4954F0DF25DF /* Pods-PetsNPalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPalsTests.release.xcconfig"; path = "Target Support Files/Pods-PetsNPalsTests/Pods-PetsNPalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C59D12C25E310849715473EF /* Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPals-PetsNPalsUITests/Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +229,8 @@
 				40997E54260E67C90046D0B8 /* Extensions.swift */,
 				40997E59260E68180046D0B8 /* AuthManager.swift */,
 				40997E5E260E68630046D0B8 /* DatabaseManager.swift */,
+				40FF8315264CE5CC00416139 /* PostAPIModel.swift */,
+				40FF831A264CE60F00416139 /* PostContentAPI.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,7 +238,6 @@
 		40997E6E260E8A4B0046D0B8 /* Healthcare Cells */ = {
 			isa = PBXGroup;
 			children = (
-				400977DD262D1FCB003E84A9 /* HealthPost.swift */,
 				400977DC262D1FCA003E84A9 /* HealthTableViewCell.swift */,
 			);
 			path = "Healthcare Cells";
@@ -338,7 +339,6 @@
 		40A0FEEE26058B2C005819E0 /* Home Cells */ = {
 			isa = PBXGroup;
 			children = (
-				40A0219C260990E3007F287B /* Cell.swift */,
 				40997E66260E80C20046D0B8 /* HomeTableViewCell.swift */,
 			);
 			path = "Home Cells";
@@ -665,10 +665,10 @@
 			files = (
 				400977EE262D208B003E84A9 /* VideoPostTableViewCell.swift in Sources */,
 				40A0FEBF2604F240005819E0 /* ViewController.swift in Sources */,
-				40A0219D260990E3007F287B /* Cell.swift in Sources */,
 				400977B0262D1B42003E84A9 /* FMDatabase.m in Sources */,
 				40A0217D2609300B007F287B /* SwitchTableViewCell.swift in Sources */,
 				40A0FF362606F945005819E0 /* ManagePetController.swift in Sources */,
+				40FF8316264CE5CC00416139 /* PostAPIModel.swift in Sources */,
 				40A0217726092CB4007F287B /* SettingsViewController.swift in Sources */,
 				40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */,
 				40997E55260E67C90046D0B8 /* Extensions.swift in Sources */,
@@ -679,7 +679,6 @@
 				40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */,
 				400977D8262D1FA0003E84A9 /* PetTableViewCell.swift in Sources */,
 				40A0FEBB2604F240005819E0 /* AppDelegate.swift in Sources */,
-				400977DF262D1FCB003E84A9 /* HealthPost.swift in Sources */,
 				40AA36DC26122F9B0015BAEC /* SideMenu.swift in Sources */,
 				40A0FF3B260820CC005819E0 /* AddPetViewController.swift in Sources */,
 				40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */,
@@ -703,6 +702,7 @@
 				408919E0261B8C4500E0988A /* ProdDetailsViewController.swift in Sources */,
 				400977DE262D1FCB003E84A9 /* HealthTableViewCell.swift in Sources */,
 				40BF30C22624F93000A5314D /* ProductModel.swift in Sources */,
+				40FF831B264CE60F00416139 /* PostContentAPI.swift in Sources */,
 				400977B1262D1B42003E84A9 /* FMDatabasePool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
