@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-117"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="mhw-8M-9wx">
             <objects>
-                <viewController id="ME0-tb-QBn" sceneMemberID="viewController">
+                <viewController id="ME0-tb-QBn" customClass="RegistrationViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sc-Ql-jrb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,6 +317,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsT-bE-Z2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3044.9275362318845" y="-108.48214285714285"/>
+        </scene>
+        <!--Post Detail View Controller-->
+        <scene sceneID="qYS-a0-Sd7">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailViewController" id="0m8-4v-xQH" customClass="PostDetailViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0eo-67-KcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oti-eA-0zt">
+                                <rect key="frame" x="87" y="179" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-x1-mKr">
+                                <rect key="frame" x="45" y="94" width="338" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="338" id="SPM-lH-jTa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zCo-Le-vC5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oti-eA-0zt" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="87" id="ASg-B2-S9J"/>
+                            <constraint firstItem="oti-eA-0zt" firstAttribute="top" secondItem="ieZ-x1-mKr" secondAttribute="bottom" constant="64" id="PeB-fC-pcC"/>
+                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="top" secondItem="zCo-Le-vC5" secondAttribute="top" constant="50" id="Smv-o6-crT"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="oti-eA-0zt" secondAttribute="trailing" constant="87" id="VIq-Wq-Ck6"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="ieZ-x1-mKr" secondAttribute="trailing" constant="31" id="VsB-BP-Vyd"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="bottom" secondItem="oti-eA-0zt" secondAttribute="bottom" constant="555" id="htv-g8-3sp"/>
+                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="45" id="zOJ-LG-eZc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="ieZ-x1-mKr" id="9cS-6m-hOv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39l-5n-r6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5033.3333333333339" y="-117.1875"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Cqr-5e-KUt">
@@ -794,7 +835,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="HealthPostCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HealthPostCell" rowHeight="532" id="eMR-tN-ULT" customClass="HealthPostCell" customModule="PetsNPals" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HealthPostCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HealthPostCell" rowHeight="532" id="eMR-tN-ULT" customClass="HealthPostCell" customModule="PetsNPals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="532"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eMR-tN-ULT" id="kZL-DT-G3i">

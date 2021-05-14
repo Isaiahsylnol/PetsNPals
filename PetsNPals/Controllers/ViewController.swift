@@ -55,22 +55,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if index == 0 {
             let healthView = self.storyboard?.instantiateViewController(withIdentifier: "HealthViewController") as! HealthViewController
             
-            navigationItem.rightBarButtonItem = nil
-            self.addChild(healthView)
-            self.view.addSubview(healthView.view)
-            healthView.didMove(toParent: self)
-            self.view.isHidden = false
-            healthView.view.isHidden = false
+            self.navigationController?.pushViewController(healthView, animated: true)
         }
         else if index == 2 {
             let videoView = self.storyboard?.instantiateViewController(withIdentifier: "VideoViewController") as! VideoViewController
             
-            navigationItem.rightBarButtonItem = nil
-            self.addChild(videoView)
-            self.view.addSubview(videoView.view)
-            videoView.didMove(toParent: self)
-            self.view.isHidden = false
-            videoView.view.isHidden = false
+            self.navigationController?.pushViewController(videoView, animated: true)
         }
         else if index == 3 {
             print("Shop")

@@ -42,5 +42,26 @@ extension HealthViewController: UITableViewDataSource, UITableViewDelegate {
         cell.articleImage.image = UIImage(named: user.img!)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ 
+        let index = indexPath.row
+        if index == 0 {
+
+                if let postDetail = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController{
+                    postDetail.postTitle = myArray[index].title!
+                    self.navigationController?.pushViewController(postDetail, animated: true)
+                }
+        }
+        else if index == 2 {
+            let videoView = self.storyboard?.instantiateViewController(withIdentifier: "VideoViewController") as! VideoViewController
+            
+            self.navigationController?.pushViewController(videoView, animated: true)
+        }
+        else if index == 3 {
+            print("Shop")
+        }
+    }
+
 }
 

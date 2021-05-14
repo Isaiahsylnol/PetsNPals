@@ -13,7 +13,6 @@ class ShopViewController: UIViewController {
     var prods = [ProductModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
- 
 
         // Do any additional setup after loading the view.
     }
@@ -51,8 +50,6 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
                 productDetailView.price = "$\(String(prods[index].price))"
                 self.navigationController?.pushViewController(productDetailView, animated: true)
             }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

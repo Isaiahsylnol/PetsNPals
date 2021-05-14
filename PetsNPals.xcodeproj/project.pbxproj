@@ -55,6 +55,7 @@
 		40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECFF3A263B2351008F97E9 /* UserModel.swift */; };
 		40FF8316264CE5CC00416139 /* PostAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF8315264CE5CC00416139 /* PostAPIModel.swift */; };
 		40FF831B264CE60F00416139 /* PostContentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF831A264CE60F00416139 /* PostContentAPI.swift */; };
+		40FF8326264E229000416139 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF8325264E229000416139 /* PostDetailViewController.swift */; };
 		6B20F4D41998F869F14015C6 /* Pods_PetsNPalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */; };
 		8A526FDB993C91988694E118 /* Pods_PetsNPals_PetsNPalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032682ADB53308ACEB4B05D9 /* Pods_PetsNPals_PetsNPalsUITests.framework */; };
 		F0503439FBE26C602CADA90D /* Pods_PetsNPals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5493A61D5B17F30D7052A4 /* Pods_PetsNPals.framework */; };
@@ -143,6 +144,7 @@
 		40ECFF3A263B2351008F97E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		40FF8315264CE5CC00416139 /* PostAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIModel.swift; sourceTree = "<group>"; };
 		40FF831A264CE60F00416139 /* PostContentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentAPI.swift; sourceTree = "<group>"; };
+		40FF8325264E229000416139 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		720C13293D7D69A160AD34F3 /* Pods_PetsNPalsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetsNPalsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DF84C4988B4954F0DF25DF /* Pods-PetsNPalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPalsTests.release.xcconfig"; path = "Target Support Files/Pods-PetsNPalsTests/Pods-PetsNPalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C59D12C25E310849715473EF /* Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetsNPals-PetsNPalsUITests/Pods-PetsNPals-PetsNPalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				400977E6262D2057003E84A9 /* VideoViewController.swift */,
 				40AE4AF5261279100052DD6D /* AboutViewController.swift */,
 				408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */,
+				40FF8325264E229000416139 /* PostDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				400977EE262D208B003E84A9 /* VideoPostTableViewCell.swift in Sources */,
+				40FF8326264E229000416139 /* PostDetailViewController.swift in Sources */,
 				40A0FEBF2604F240005819E0 /* ViewController.swift in Sources */,
 				400977B0262D1B42003E84A9 /* FMDatabase.m in Sources */,
 				40A0217D2609300B007F287B /* SwitchTableViewCell.swift in Sources */,
