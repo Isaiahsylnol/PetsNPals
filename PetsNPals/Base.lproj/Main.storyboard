@@ -326,32 +326,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oti-eA-0zt">
-                                <rect key="frame" x="87" y="179" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-x1-mKr">
-                                <rect key="frame" x="45" y="94" width="338" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-x1-mKr">
+                                <rect key="frame" x="26" y="59" width="357" height="111"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" header="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="SPM-lH-jTa"/>
+                                    <constraint firstAttribute="height" constant="111" id="laU-J6-uTz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-Tx-45T">
+                                <rect key="frame" x="26" y="394" width="357" height="414"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="371" id="WEI-zZ-3J6"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oti-eA-0zt">
+                                <rect key="frame" x="26" y="178" width="357" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="357" id="CoL-jS-MGw"/>
+                                    <constraint firstAttribute="height" constant="183" id="bC0-hd-I9N"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zCo-Le-vC5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oti-eA-0zt" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="87" id="ASg-B2-S9J"/>
-                            <constraint firstItem="oti-eA-0zt" firstAttribute="top" secondItem="ieZ-x1-mKr" secondAttribute="bottom" constant="64" id="PeB-fC-pcC"/>
-                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="top" secondItem="zCo-Le-vC5" secondAttribute="top" constant="50" id="Smv-o6-crT"/>
-                            <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="oti-eA-0zt" secondAttribute="trailing" constant="87" id="VIq-Wq-Ck6"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="oti-eA-0zt" secondAttribute="trailing" constant="31" id="1R4-fR-TUu"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="Emz-Tx-45T" secondAttribute="trailing" constant="31" id="1fp-2w-5wB"/>
+                            <constraint firstItem="oti-eA-0zt" firstAttribute="top" secondItem="ieZ-x1-mKr" secondAttribute="bottom" constant="8" symbolic="YES" id="46f-ps-1Lf"/>
+                            <constraint firstItem="Emz-Tx-45T" firstAttribute="top" secondItem="oti-eA-0zt" secondAttribute="bottom" constant="33" id="8uv-ae-LTZ"/>
+                            <constraint firstItem="Emz-Tx-45T" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="26" id="HBG-tV-kdZ"/>
                             <constraint firstItem="zCo-Le-vC5" firstAttribute="trailing" secondItem="ieZ-x1-mKr" secondAttribute="trailing" constant="31" id="VsB-BP-Vyd"/>
-                            <constraint firstItem="zCo-Le-vC5" firstAttribute="bottom" secondItem="oti-eA-0zt" secondAttribute="bottom" constant="555" id="htv-g8-3sp"/>
-                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="45" id="zOJ-LG-eZc"/>
+                            <constraint firstItem="zCo-Le-vC5" firstAttribute="bottom" secondItem="Emz-Tx-45T" secondAttribute="bottom" constant="54" id="WVi-9J-xrc"/>
+                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="top" secondItem="zCo-Le-vC5" secondAttribute="top" constant="15" id="Zi4-4D-N3k"/>
+                            <constraint firstItem="oti-eA-0zt" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="26" id="c8E-ph-ywE"/>
+                            <constraint firstItem="ieZ-x1-mKr" firstAttribute="leading" secondItem="zCo-Le-vC5" secondAttribute="leading" constant="26" id="zOJ-LG-eZc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="oti-eA-0zt" id="gb5-z6-hLc"/>
+                        <outlet property="paragraphTextArea" destination="Emz-Tx-45T" id="agY-Bf-1f0"/>
                         <outlet property="titleLabel" destination="ieZ-x1-mKr" id="9cS-6m-hOv"/>
                     </connections>
                 </viewController>
