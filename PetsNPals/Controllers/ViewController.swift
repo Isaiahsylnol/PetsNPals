@@ -94,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         handleNotAuthenticated()
         // Titles for the various navigation menu selections
         // Applications various presentable screens
-        let menu = MenuController(with: ["Home", "Shop", "Subscriptions", "Settings", "Profile", "Manage Pets" , "About" ,"Logout"])
+        let menu = MenuController(with: ["Home", "Shop", "Subscriptions", "Settings", "Profile", "Manage Pets" , "About" ,"Log out"])
         menu.delegate = self
         sideMenu = SideMenuNavigationController(rootViewController: menu)
         sideMenu?.leftSide = true
@@ -223,7 +223,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
             // Logout code
-            else if named == "Logout" {
+            else if named == "Log out" {
+                self?.title = ""
                 let actionSheet = UIAlertController(title: "",
                                                     message: "Are you sure you want to log out?",
                                                     preferredStyle: .actionSheet)

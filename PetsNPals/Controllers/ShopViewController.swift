@@ -31,10 +31,11 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
         let pic = UIImage(data: prods[indexPath.row].image)
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
         cell.nameLabel.text = prods[indexPath.row].name
+        cell.supplierLabel.text = prods[indexPath.row].supplier
         cell.priceLabel.text = "Price: \(prods[indexPath.row].price)"
         cell.prodImage.image = pic
         cell.descriptionLabel.text = prods[indexPath.row].description
-        cell.ratingLabel.text = String(prods[indexPath.row].rating)
+        cell.ratingLabel.text = "Rating: \(prods[indexPath.row].rating)"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

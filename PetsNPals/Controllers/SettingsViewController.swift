@@ -91,21 +91,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
             })
         ]))
-        
-        models.append(Section(title: "Apps", option: [
-            .staticCell(model: SettingsOption(title: "WIFI", icon: UIImage(systemName: "house")!, iconBackgroundColor: .systemPink){
-                print("Tapped First Cell")
-            }),
-            .staticCell(model: SettingsOption(title: "Bluetooth", icon: UIImage(systemName: "house")!, iconBackgroundColor: .link){
-                
-            }),
-            .staticCell(model: SettingsOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane")!, iconBackgroundColor: .systemGreen){
-                
-            }),
-            .staticCell(model:SettingsOption(title: "iCloud", icon: UIImage(systemName: "cloud")!, iconBackgroundColor: .systemOrange){
-                
-            })
-        ]))
     }
     
     // Display section titles

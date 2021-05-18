@@ -23,8 +23,15 @@ class ProdDetailsViewController: UIViewController {
     var price = ""
     var img = UIImage()
     
+    @objc func buttonAction(sender: UIButton!) {
+        let addPetView = storyboard?.instantiateViewController(withIdentifier: "AddPetViewController") as! AddPetViewController
+      self.present(addPetView, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonAction)), animated: true)
         
         nameLabel.text = name
         descriptionLabel.text = prodDescription
