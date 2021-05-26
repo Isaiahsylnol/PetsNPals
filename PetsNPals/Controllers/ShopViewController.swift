@@ -13,7 +13,6 @@ class ShopViewController: UIViewController {
     var prods = [ProductModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +37,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ratingLabel.text = "Rating: \(prods[indexPath.row].rating)"
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
         let index = indexPath.row

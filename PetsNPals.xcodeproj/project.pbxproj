@@ -52,6 +52,7 @@
 		40BF30C22624F93000A5314D /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF30C12624F93000A5314D /* ProductModel.swift */; };
 		40BF30C72624F96100A5314D /* PetsNPalsDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 40BF30C62624F96100A5314D /* PetsNPalsDB.db */; };
 		40BF30CD2624FA0F00A5314D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */; };
+		40EC72E8265D768D00393F54 /* BadgeHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC72E7265D768D00393F54 /* BadgeHub.swift */; };
 		40ECFF3B263B2352008F97E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECFF3A263B2351008F97E9 /* UserModel.swift */; };
 		40FF8316264CE5CC00416139 /* PostAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF8315264CE5CC00416139 /* PostAPIModel.swift */; };
 		40FF831B264CE60F00416139 /* PostContentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF831A264CE60F00416139 /* PostContentAPI.swift */; };
@@ -141,6 +142,7 @@
 		40BF30C12624F93000A5314D /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		40BF30C62624F96100A5314D /* PetsNPalsDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = PetsNPalsDB.db; sourceTree = "<group>"; };
 		40BF30CC2624FA0F00A5314D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		40EC72E7265D768D00393F54 /* BadgeHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeHub.swift; sourceTree = "<group>"; };
 		40ECFF3A263B2351008F97E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		40FF8315264CE5CC00416139 /* PostAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIModel.swift; sourceTree = "<group>"; };
 		40FF831A264CE60F00416139 /* PostContentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentAPI.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		40997E53260E669E0046D0B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40EC72E6265D767200393F54 /* BadgeHub */,
 				40997E54260E67C90046D0B8 /* Extensions.swift */,
 				40997E59260E68180046D0B8 /* AuthManager.swift */,
 				40997E5E260E68630046D0B8 /* DatabaseManager.swift */,
@@ -400,6 +403,14 @@
 			children = (
 			);
 			path = SQLiteDatasource;
+			sourceTree = "<group>";
+		};
+		40EC72E6265D767200393F54 /* BadgeHub */ = {
+			isa = PBXGroup;
+			children = (
+				40EC72E7265D768D00393F54 /* BadgeHub.swift */,
+			);
+			path = BadgeHub;
 			sourceTree = "<group>";
 		};
 		7076009CE07EBC9A91B75BD5 /* Pods */ = {
@@ -683,6 +694,7 @@
 				40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */,
 				400977D8262D1FA0003E84A9 /* PetTableViewCell.swift in Sources */,
 				40A0FEBB2604F240005819E0 /* AppDelegate.swift in Sources */,
+				40EC72E8265D768D00393F54 /* BadgeHub.swift in Sources */,
 				40AA36DC26122F9B0015BAEC /* SideMenu.swift in Sources */,
 				40A0FF3B260820CC005819E0 /* AddPetViewController.swift in Sources */,
 				40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */,

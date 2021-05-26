@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import BadgeHub
 class ProdDetailsViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -16,6 +16,13 @@ class ProdDetailsViewController: UIViewController {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBAction func addToCartButton(_ sender: UIButton) {
+        hub?.increment()
+        hub?.pop()
+    }
+    
+    private var hub: BadgeHub?
+ 
     var name = ""
     var prodDescription = ""
     var supplier = ""
@@ -23,6 +30,14 @@ class ProdDetailsViewController: UIViewController {
     var price = ""
     var img = UIImage()
     
+    private lazy var imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.frame = CGRect(x: view.frame.size.width / 2 - 48,
+                          y: 80, width: 36, height: 30)
+        iv.image = UIImage(named: "cart3x")
+        return iv
+    }()
+   
     @objc func buttonAction(sender: UIButton!) {
         let addPetView = storyboard?.instantiateViewController(withIdentifier: "AddPetViewController") as! AddPetViewController
       self.present(addPetView, animated: true, completion: nil)
@@ -30,9 +45,19 @@ class ProdDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         
+            let menuBarItem = UIBarButtonItem(customView: imageView)
+ 
+            let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 40)
+            currWidth?.isActive = true
+            let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
+            currHeight?.isActive = true
+            menuBarItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotSettingPage)))
         
-        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonAction)), animated: true)
-        
+        self.navigationItem.rightBarButtonItem = menuBarItem
+
+        setupImageView()
+
         nameLabel.text = name
         descriptionLabel.text = prodDescription
         supplierLabel.text = supplier
@@ -41,5 +66,16 @@ class ProdDetailsViewController: UIViewController {
         priceLabel.text = price
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func gotSettingPage(){
+        print("pressed")
+       }
+    
+    private func setupImageView() {
+        hub = BadgeHub(view: imageView)
+        hub?.moveCircleBy(x: 8, y: 7)
+        hub?.scaleCircleSize(by: CGFloat(0.90))
+        view.addSubview(imageView)
     }
 }

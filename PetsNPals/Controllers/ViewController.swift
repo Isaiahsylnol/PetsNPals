@@ -105,6 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView?.delegate = self
         tableView?.dataSource = self
         addChildControllers()
+        navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
     // Add our view controllers as children
@@ -116,7 +117,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         addChild(subscriptionController)
         
         view.addSubview(aboutController.view)
-      
         view.addSubview(mainPetController.view)
         view.addSubview(settingsController.view)
         view.addSubview(subscriptionController.view)
