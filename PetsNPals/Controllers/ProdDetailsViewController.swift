@@ -46,16 +46,16 @@ class ProdDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          
-            let menuBarItem = UIBarButtonItem(customView: imageView)
+            let cartBarItem = UIBarButtonItem(customView: imageView)
  
-            let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 40)
+            let currWidth = cartBarItem.customView?.widthAnchor.constraint(equalToConstant: 40)
             currWidth?.isActive = true
-            let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
+            let currHeight = cartBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
             currHeight?.isActive = true
-            menuBarItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotSettingPage)))
+            cartBarItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(testfunc)))
         
-        self.navigationItem.rightBarButtonItem = menuBarItem
-
+        self.navigationItem.rightBarButtonItem = cartBarItem
+        
         setupImageView()
 
         nameLabel.text = name
@@ -68,7 +68,7 @@ class ProdDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @objc func gotSettingPage(){
+    @objc func testfunc(){
         print("pressed")
        }
     

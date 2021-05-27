@@ -11,9 +11,9 @@ class ShopViewController: UIViewController {
 
     @IBOutlet weak var shopTableView: UITableView!
     var prods = [ProductModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
             prods = ModelManager.getInstance().getAllProducts()
