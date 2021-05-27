@@ -19,7 +19,7 @@ class HomeTableViewCell: UITableViewCell {
     func setCell(cell: Cell) {
         myImageView.image = cell.image
         titleLabel.text = cell.title
-        titleLabel.font =  UIFont(name: "AvenirNext-Bold", size: 30.50)
+        titleLabel.font =  UIFont(name: "AvenirNext-Bold", size: 25.50)
     }
 
     public func configure() {

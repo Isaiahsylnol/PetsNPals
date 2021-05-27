@@ -21,11 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func createArray() -> [Cell] {
         var homeCells: [Cell] = []
         
-        let health = Cell(image: UIImage(named: "healthcare1.jpg")!, title: "Healthcare Tips")
-        let news = Cell(image: UIImage(named: "pet_news.jpg")!, title: "Latest News")
-        let media = Cell(image: UIImage(named: "media.png")!, title: "Media")
-        let shop = Cell(image: UIImage(named: "toys1.png")!, title: "Shop")
-        let recommened = Cell(image: UIImage(named: "dog_house.jpg")!, title: "Recommended")
+        let health = Cell(image: UIImage(named: "healthcare1.jpg")!, title: "HEALTHCARE TIPS")
+        let news = Cell(image: UIImage(named: "pet_news.jpg")!, title: "LATEST NEWS")
+        let media = Cell(image: UIImage(named: "media.png")!, title: "MEDIA")
+        let shop = Cell(image: UIImage(named: "toys1.png")!, title: "SHOP")
+        let recommened = Cell(image: UIImage(named: "dog_house.jpg")!, title: "RECOMMENDED")
 
         homeCells.append(health)
         homeCells.append(news)
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView?.delegate = self
         tableView?.dataSource = self
         addChildControllers()
-        navigationController?.navigationBar.barTintColor = UIColor.white
+    
     }
     
     // Add our view controllers as children
