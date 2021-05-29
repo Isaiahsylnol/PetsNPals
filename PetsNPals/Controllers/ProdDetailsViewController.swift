@@ -15,13 +15,9 @@ class ProdDetailsViewController: UIViewController {
     @IBOutlet weak var prodImageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    var prods = [ProductModel]()
     
-    @IBAction func addToCartButton(_ sender: UIButton) {
-        hub?.increment()
-        hub?.pop()
-    }
-    
-    private var hub: BadgeHub?
+   private var hub: BadgeHub?
  
     var name = ""
     var prodDescription = ""
@@ -37,11 +33,6 @@ class ProdDetailsViewController: UIViewController {
         iv.image = UIImage(named: "cart3x")
         return iv
     }()
-   
-    @objc func buttonAction(sender: UIButton!) {
-        let addPetView = storyboard?.instantiateViewController(withIdentifier: "AddPetViewController") as! AddPetViewController
-      self.present(addPetView, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +53,28 @@ class ProdDetailsViewController: UIViewController {
         descriptionLabel.text = prodDescription
         supplierLabel.text = supplier
         prodImageView.image = img
-        ratingLabel.text = rating
-        priceLabel.text = price
+        ratingLabel.text = "rating: \(rating)"
+        priceLabel.text = "$\(price)"
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func addToCartButton(_ sender: UIButton) {
+        hub?.increment()
+        hub?.pop()
+        print(price)
+        print(prodDescription)
+        print(supplier)
+        print(rating)
+        let prod = ProductModel(id: 0, url: "nil", name: name, breed: "nil", price: Double(price)!, supplier: supplier, rating: Int(rating)!, description: prodDescription, image: nil)
+        prods.append(prod)
+        print(prods.count)
+ 
+    }
     
     @objc func testfunc(){
-        print("pressed")
+        let cartView = CartViewController()
+        let productDetailView = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController
+        self.navigationController?.pushViewController(cartView, animated: true)
        }
     
     private func setupImageView() {

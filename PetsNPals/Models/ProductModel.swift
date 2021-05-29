@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 struct ProductModel{
-    let id: Int
-    let url: String
+    let id: Int?
+    let url: String?
     let name: String
-    let breed: String 
+    let breed: String?
     let price: Double
-    let supplier: String
+    let supplier: String?
     let rating: Int
-    let description: String
-    let image: Data
+    let description: String?
+    let image: Data?
 }

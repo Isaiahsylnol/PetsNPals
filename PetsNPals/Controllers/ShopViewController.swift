@@ -27,11 +27,11 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pic = UIImage(data: prods[indexPath.row].image)
+        let pic = UIImage(data: prods[indexPath.row].image!)
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
         cell.nameLabel.text = prods[indexPath.row].name
         cell.supplierLabel.text = prods[indexPath.row].supplier
-        cell.priceLabel.text = "Price: \(prods[indexPath.row].price)"
+        cell.priceLabel.text = "Price: $\(prods[indexPath.row].price)"
         cell.prodImage.image = pic
         cell.descriptionLabel.text = prods[indexPath.row].description
         cell.ratingLabel.text = "Rating: \(prods[indexPath.row].rating)"
@@ -44,11 +44,11 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
  
             if let productDetailView = storyboard?.instantiateViewController(withIdentifier: "ProdDetailsViewController") as? ProdDetailsViewController{
                 productDetailView.name = prods[index].name
-                productDetailView.prodDescription = prods[index].description
-                productDetailView.supplier = prods[index].supplier
-                productDetailView.img = UIImage(data: prods[index].image)!
-                productDetailView.rating = "Rating: \(String(prods[index].rating))"
-                productDetailView.price = "$\(String(prods[index].price))"
+                productDetailView.prodDescription = prods[index].description!
+                productDetailView.supplier = prods[index].supplier!
+                productDetailView.img = UIImage(data: prods[index].image!)!
+                productDetailView.rating = "\(String(prods[index].rating))"
+                productDetailView.price = "\(String(prods[index].price))"
                 self.navigationController?.pushViewController(productDetailView, animated: true)
             }
     }
