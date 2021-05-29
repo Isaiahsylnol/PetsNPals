@@ -18,6 +18,7 @@ class PostDetailViewController: UIViewController {
     var postImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         titleLabel.text = postTitle
         paragraphTextArea.text = paragraph
         imageView.image = postImage

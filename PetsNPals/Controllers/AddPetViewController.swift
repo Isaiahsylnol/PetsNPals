@@ -23,7 +23,7 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
     var petData: DogModel?
     
     @IBAction func saveButton(_ sender: Any) {
-        // Create new dog
+        // MARK: - Create new dog object
         if headerTitle != ""{
             let pet = DogModel(  id: petData!.id, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text!)
             let isUpdate = ModelManager.getInstance().updatePet(pet: pet)
@@ -33,6 +33,7 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
             _ = navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
         }
+        // MARK: - Edit selected dog object
         else {
              
             let pet = DogModel(id: 0, age: Int(petAgeTextField.text!)!, name: petNameTextField.text!, gender: petGenderTextField.text!, breed: breedTextField.text!, weight: Double(petWeightTextField.text!)!, height: Double(petHeightTextField.text!)!, comment: commentsTextView.text)
@@ -46,7 +47,7 @@ class AddPetViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    // Array of breeds
+    // MARK: - Array of breeds *to be pulled from API*
     let breeds = ["Huskey","Labador","Poodle","Frenchie","Doberman","Boxer","Pitbull"]
     
     var pickerView = UIPickerView()

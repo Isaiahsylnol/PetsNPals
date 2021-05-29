@@ -43,7 +43,7 @@ class ProdDetailsViewController: UIViewController {
             currWidth?.isActive = true
             let currHeight = cartBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
             currHeight?.isActive = true
-            cartBarItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(testfunc)))
+            cartBarItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showCart)))
         
         self.navigationItem.rightBarButtonItem = cartBarItem
         
@@ -58,20 +58,18 @@ class ProdDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Add item selected to user cart, increment the cart badge item count
     @IBAction func addToCartButton(_ sender: UIButton) {
         hub?.increment()
         hub?.pop()
-        print(price)
-        print(prodDescription)
-        print(supplier)
-        print(rating)
         let prod = ProductModel(id: 0, url: "nil", name: name, breed: "nil", price: Double(price)!, supplier: supplier, rating: Int(rating)!, description: prodDescription, image: nil)
         prods.append(prod)
         print(prods.count)
- 
     }
     
-    @objc func testfunc(){
+    // MARK: - Present Cart View populated with stored user items
+    @objc func showCart(){
         let cartView = CartViewController()
         let productDetailView = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController
         self.navigationController?.pushViewController(cartView, animated: true)

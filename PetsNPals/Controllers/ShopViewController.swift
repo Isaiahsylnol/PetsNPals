@@ -38,10 +38,11 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
         let index = indexPath.row
- 
+        // MARK: - Selected product cell's data sent to the "ProductDetailView"
             if let productDetailView = storyboard?.instantiateViewController(withIdentifier: "ProdDetailsViewController") as? ProdDetailsViewController{
                 productDetailView.name = prods[index].name
                 productDetailView.prodDescription = prods[index].description!
