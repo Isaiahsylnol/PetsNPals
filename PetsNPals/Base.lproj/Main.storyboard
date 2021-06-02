@@ -604,8 +604,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wos-69-SE1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.97450488810000002" green="0.5299170017" blue="0.097119472920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -1023,17 +1023,102 @@
         <!--Cart-->
         <scene sceneID="g2E-js-shX">
             <objects>
-                <viewController storyboardIdentifier="CartViewController" title="Cart" id="BGl-hU-OMC" customClass="CartViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" title="Cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BGl-hU-OMC" customClass="CartViewController" customModule="PetsNPals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yN9-UH-57y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-KP-Hon">
+                                <rect key="frame" x="0.0" y="35" width="414" height="840"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR CART" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlQ-N0-ZWD">
+                                        <rect key="frame" x="29" y="61.5" width="183.5" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qoO-iZ-HTU">
+                                        <rect key="frame" x="8" y="110" width="398" height="709"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="155" id="ETg-N3-92U" customClass="CartTableViewCell" customModule="PetsNPals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="398" height="155"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ETg-N3-92U" id="v3n-ld-9by">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="155"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-Sl-Ggn">
+                                                            <rect key="frame" x="20" y="35" width="86" height="84"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McK-7b-bmh">
+                                                            <rect key="frame" x="311" y="11" width="61" height="30"/>
+                                                            <state key="normal" title="REMOVE">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="removeItemButton:" destination="ETg-N3-92U" eventType="touchUpInside" id="bpc-AO-vkN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-3k-jMs">
+                                                            <rect key="frame" x="311" y="98" width="39" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-om-RFg">
+                                                            <rect key="frame" x="127" y="11" width="33" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="McK-7b-bmh" firstAttribute="leading" secondItem="tpl-om-RFg" secondAttribute="trailing" constant="158" id="59Q-nT-dAG"/>
+                                                        <constraint firstItem="nGu-3k-jMs" firstAttribute="top" secondItem="McK-7b-bmh" secondAttribute="bottom" constant="57" id="Bkk-j3-IeX"/>
+                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="leading" secondItem="Jc8-Sl-Ggn" secondAttribute="trailing" constant="21" id="IOX-9k-rsJ"/>
+                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="35" id="QOb-Xb-b37"/>
+                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="leading" secondItem="v3n-ld-9by" secondAttribute="leading" constant="20" symbolic="YES" id="fs8-6K-uC2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Jc8-Sl-Ggn" secondAttribute="bottom" constant="36" id="gxF-PH-SAe"/>
+                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="11" id="lbq-C5-AhF"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="prodImage" destination="Jc8-Sl-Ggn" id="HVW-vo-lgs"/>
+                                                    <outlet property="prodPrice" destination="nGu-3k-jMs" id="JTQ-kr-rY9"/>
+                                                    <outlet property="prodTitle" destination="tpl-om-RFg" id="EcK-K6-V78"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qoO-iZ-HTU" secondAttribute="trailing" constant="8" id="9Fx-vk-J4e"/>
+                                    <constraint firstItem="qoO-iZ-HTU" firstAttribute="top" secondItem="RlQ-N0-ZWD" secondAttribute="bottom" constant="7.5" id="C5v-az-XNw"/>
+                                    <constraint firstItem="qoO-iZ-HTU" firstAttribute="leading" secondItem="Zxh-KP-Hon" secondAttribute="leading" constant="8" id="coU-GE-fJI"/>
+                                    <constraint firstAttribute="bottom" secondItem="qoO-iZ-HTU" secondAttribute="bottom" constant="21" id="fN6-Pb-EMh"/>
+                                    <constraint firstItem="RlQ-N0-ZWD" firstAttribute="top" secondItem="Zxh-KP-Hon" secondAttribute="top" constant="61.5" id="rVI-gj-MwT"/>
+                                    <constraint firstItem="RlQ-N0-ZWD" firstAttribute="leading" secondItem="Zxh-KP-Hon" secondAttribute="leading" constant="29" id="t8P-TR-iKz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="d6J-9i-IcP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zxh-KP-Hon" firstAttribute="bottom" secondItem="d6J-9i-IcP" secondAttribute="bottom" constant="13" id="3NZ-wU-3cT"/>
+                            <constraint firstItem="Zxh-KP-Hon" firstAttribute="leading" secondItem="d6J-9i-IcP" secondAttribute="leading" id="B5W-kG-WXs"/>
+                            <constraint firstItem="d6J-9i-IcP" firstAttribute="trailing" secondItem="Zxh-KP-Hon" secondAttribute="trailing" id="LUs-ep-gND"/>
+                            <constraint firstItem="d6J-9i-IcP" firstAttribute="top" secondItem="Zxh-KP-Hon" secondAttribute="top" constant="9" id="gaq-Pr-vSr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cartTableView" destination="qoO-iZ-HTU" id="pjd-Jx-lxB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xlx-h4-Vws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066" y="814"/>
+            <point key="canvasLocation" x="3065.217391304348" y="813.61607142857144"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.97450488810000002" green="0.5299170017" blue="0.097119472920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

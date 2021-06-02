@@ -105,34 +105,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView?.delegate = self
         tableView?.dataSource = self
         addChildControllers()
-    
     }
     
     // Add our view controllers as children
     private func addChildControllers() {
     
-        addChild(aboutController)
-        addChild(mainPetController)
         addChild(settingsController)
         addChild(subscriptionController)
-        
-        view.addSubview(aboutController.view)
-        view.addSubview(mainPetController.view)
+ 
         view.addSubview(settingsController.view)
         view.addSubview(subscriptionController.view)
         
-        aboutController.view.frame = view.bounds
-        mainPetController.view.frame = view.bounds
         settingsController.view.frame = view.bounds
         subscriptionController.view.frame = view.bounds
  
-        aboutController.didMove(toParent: self)
-        mainPetController.didMove(toParent: self)
         settingsController.didMove(toParent: self)
         subscriptionController.didMove(toParent: self)
- 
-        aboutController.view.isHidden = true
-        mainPetController.view.isHidden = true
+
         settingsController.view.isHidden = true
         subscriptionController.view.isHidden = true
     }

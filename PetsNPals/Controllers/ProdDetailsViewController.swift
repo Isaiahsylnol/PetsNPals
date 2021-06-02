@@ -15,7 +15,7 @@ class ProdDetailsViewController: UIViewController {
     @IBOutlet weak var prodImageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    var prods = [ProductModel]()
+    static var prods = [ProductModel]()
     
    private var hub: BadgeHub?
  
@@ -55,8 +55,6 @@ class ProdDetailsViewController: UIViewController {
         prodImageView.image = img
         ratingLabel.text = "rating: \(rating)"
         priceLabel.text = "$\(price)"
-
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Add item selected to user cart, increment the cart badge item count
@@ -64,15 +62,18 @@ class ProdDetailsViewController: UIViewController {
         hub?.increment()
         hub?.pop()
         let prod = ProductModel(id: 0, url: "nil", name: name, breed: "nil", price: Double(price)!, supplier: supplier, rating: Int(rating)!, description: prodDescription, image: nil)
-        prods.append(prod)
-        print(prods.count)
+        ProdDetailsViewController.prods.append(prod)
+//        print(ProdDetailsViewController.prods.count)
+//        print(ProdDetailsViewController.prods[0].name)
+//        print(ProdDetailsViewController.prods[0].price)
     }
     
     // MARK: - Present Cart View populated with stored user items
     @objc func showCart(){
-        let cartView = CartViewController()
-        let productDetailView = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController
-        self.navigationController?.pushViewController(cartView, animated: true)
+
+        let cartView = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        cartView.name = "Trader Joe"
+        navigationController?.pushViewController(cartView, animated: true)
        }
     
     private func setupImageView() {

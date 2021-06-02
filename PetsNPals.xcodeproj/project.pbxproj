@@ -18,7 +18,8 @@
 		400977EE262D208B003E84A9 /* VideoPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977EC262D208B003E84A9 /* VideoPostTableViewCell.swift */; };
 		400977EF262D208B003E84A9 /* VideoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400977ED262D208B003E84A9 /* VideoPost.swift */; };
 		408919E0261B8C4500E0988A /* ProdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */; };
-		4096A1FF2661D4680013D862 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4096A1FE2661D4680013D862 /* CartViewController.swift */; };
+		4096A2072666D1DF0013D862 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4096A2062666D1DF0013D862 /* CartViewController.swift */; };
+		4096A20D2666F31A0013D862 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4096A20C2666F31A0013D862 /* CartTableViewCell.swift */; };
 		40997E41260E45CB0046D0B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40997E40260E45CA0046D0B8 /* GoogleService-Info.plist */; };
 		40997E47260E5E760046D0B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40997E46260E5E760046D0B8 /* LoginViewController.swift */; };
 		40997E4F260E65FE0046D0B8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40997E4E260E65FE0046D0B8 /* RegistrationViewController.swift */; };
@@ -103,7 +104,8 @@
 		400977EC262D208B003E84A9 /* VideoPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostTableViewCell.swift; sourceTree = "<group>"; };
 		400977ED262D208B003E84A9 /* VideoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPost.swift; sourceTree = "<group>"; };
 		408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdDetailsViewController.swift; sourceTree = "<group>"; };
-		4096A1FE2661D4680013D862 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		4096A2062666D1DF0013D862 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		4096A20C2666F31A0013D862 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		40997E40260E45CA0046D0B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40997E46260E5E760046D0B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		40997E4E260E65FE0046D0B8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,14 @@
 			path = "Video Cells";
 			sourceTree = "<group>";
 		};
+		4096A20B2666F29F0013D862 /* Cart Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4096A20C2666F31A0013D862 /* CartTableViewCell.swift */,
+			);
+			path = "Cart Cells";
+			sourceTree = "<group>";
+		};
 		40997E45260E5E600046D0B8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		40A0FEED26058B1A005819E0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4096A20B2666F29F0013D862 /* Cart Cells */,
 				400977EB262D208B003E84A9 /* Video Cells */,
 				40BF30CB2624FA0F00A5314D /* Shop Cells */,
 				40997E6E260E8A4B0046D0B8 /* Healthcare Cells */,
@@ -367,7 +378,7 @@
 				40AE4AF5261279100052DD6D /* AboutViewController.swift */,
 				408919DF261B8C4500E0988A /* ProdDetailsViewController.swift */,
 				40FF8325264E229000416139 /* PostDetailViewController.swift */,
-				4096A1FE2661D4680013D862 /* CartViewController.swift */,
+				4096A2062666D1DF0013D862 /* CartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -692,6 +703,7 @@
 				40997E55260E67C90046D0B8 /* Extensions.swift in Sources */,
 				40AF501D260AA8160062B706 /* DBHelper.swift in Sources */,
 				40BF30BD2624F92800A5314D /* DogModel.swift in Sources */,
+				4096A20D2666F31A0013D862 /* CartTableViewCell.swift in Sources */,
 				40997E5A260E68180046D0B8 /* AuthManager.swift in Sources */,
 				40A0219526097D4C007F287B /* SubscriptionViewController.swift in Sources */,
 				40A021822609306B007F287B /* SettingTableViewCell.swift in Sources */,
@@ -720,7 +732,7 @@
 				400977AE262D1B42003E84A9 /* FMDatabaseQueue.m in Sources */,
 				408919E0261B8C4500E0988A /* ProdDetailsViewController.swift in Sources */,
 				400977DE262D1FCB003E84A9 /* HealthTableViewCell.swift in Sources */,
-				4096A1FF2661D4680013D862 /* CartViewController.swift in Sources */,
+				4096A2072666D1DF0013D862 /* CartViewController.swift in Sources */,
 				40BF30C22624F93000A5314D /* ProductModel.swift in Sources */,
 				40FF831B264CE60F00416139 /* PostContentAPI.swift in Sources */,
 				400977B1262D1B42003E84A9 /* FMDatabasePool.m in Sources */,
