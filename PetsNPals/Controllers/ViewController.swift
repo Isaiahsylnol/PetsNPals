@@ -104,26 +104,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cells = createArray()
         tableView?.delegate = self
         tableView?.dataSource = self
-        addChildControllers()
     }
     
-    // Add our view controllers as children
-    private func addChildControllers() {
-    
-        addChild(settingsController)
-        addChild(subscriptionController)
- 
-        view.addSubview(settingsController.view)
-        view.addSubview(subscriptionController.view)
-        
-        settingsController.view.frame = view.bounds
-        subscriptionController.view.frame = view.bounds
- 
-        settingsController.didMove(toParent: self)
-        subscriptionController.didMove(toParent: self)
-
-        settingsController.view.isHidden = true
-        subscriptionController.view.isHidden = true
+    func showView(vc: UIViewController){
+        self.addChild(vc)
+        self.view.addSubview(vc.view)
+        aboutController.didMove(toParent: self)
+        self.view.isHidden = false
+        vc.view.isHidden = false
     }
     
     // Code concerning menu item selection
@@ -134,77 +122,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if named == "Home"
             {
-                let homeView = self?.storyboard?.instantiateViewController(withIdentifier: "homeViewController") as! ViewController
-                
                 self?.navigationItem.rightBarButtonItem = nil
-                self?.addChild(homeView)
-                self?.view.addSubview(homeView.view)
-                homeView.didMove(toParent: self)
-                self?.view.isHidden = false
-                homeView.view.isHidden = false
+                let homeView = self?.storyboard?.instantiateViewController(withIdentifier: "homeViewController") as! ViewController
+                self!.showView(vc: homeView)
             }
             else if named == "Shop"
             {
                 self?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self?.buttonAction)), animated: true)
                 
                 let shopView = self?.storyboard?.instantiateViewController(withIdentifier: "ShopViewController") as! ShopViewController
-                
-                self?.addChild(shopView)
-                self?.view.addSubview(shopView.view)
-                shopView.didMove(toParent: self)
-                self?.view.isHidden = false
-                shopView.view.isHidden = false
-            }
-            else if named == "Settings"
-            {
-                self?.navigationItem.rightBarButtonItem = nil
-                self?.view.addSubview((self?.settingsController.view)!)
-                self?.settingsController.didMove(toParent: self)
-                self?.view.isHidden = false
-                self?.settingsController.view.isHidden = false
+                self!.showView(vc: shopView)
             }
             else if named == "About"
             {
-                
                 self?.navigationItem.rightBarButtonItem = nil
-                
                 let aboutController = self?.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+                self!.showView(vc: aboutController)
                 
-                self?.addChild(aboutController)
-                self?.view.addSubview(aboutController.view)
-                aboutController.didMove(toParent: self)
-                self?.view.isHidden = false
-                aboutController.view.isHidden = false
             }
             else if named == "Profile"
             {
                 self?.navigationItem.rightBarButtonItem = nil
-                
                 let profileView = self?.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-                
-                self?.addChild(profileView)
-                self?.view.addSubview(profileView.view)
-                profileView.didMove(toParent: self)
-                self?.view.isHidden = false
-                profileView.view.isHidden = false
+                self!.showView(vc: profileView)
             }
             else if named == "Manage Pets"
             {
                 self?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self?.buttonAction)), animated: true)
                 
                 let petView = self?.storyboard?.instantiateViewController(withIdentifier: "ManagePetViewController") as! ManagePetViewController
-            
-                self?.addChild(petView)
-                self?.view.addSubview(petView.view)
-                petView.didMove(toParent: self)
+                self!.showView(vc: petView)
+            }
+            else if named == "Settings"
+            {
+                self?.navigationItem.rightBarButtonItem = nil
+                self?.view.addSubview((self?.settingsController.view)!)
+                self?.addChild((self!.settingsController))
+                self?.settingsController.didMove(toParent: self)
                 self?.view.isHidden = false
-                petView.view.isHidden = false
+                self?.settingsController.view.isHidden = false
             }
             else if named == "Subscriptions"
             {
                 self?.navigationItem.rightBarButtonItem = nil
             
                 self?.view.addSubview((self?.subscriptionController.view)!)
+
+                self?.addChild(self!.subscriptionController)
                 self?.subscriptionController.didMove(toParent: self)
                 self?.subscriptionController.view.isHidden = false
   
