@@ -29,6 +29,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pic = UIImage(data: prods[indexPath.row].image!)
+        // MARK: - Wiring of product objects to tableView cell's outlets
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
         cell.nameLabel.text = prods[indexPath.row].name
         cell.supplierLabel.text = prods[indexPath.row].supplier

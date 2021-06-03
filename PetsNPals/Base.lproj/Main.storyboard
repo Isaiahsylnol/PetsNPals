@@ -1041,18 +1041,36 @@
                                         <rect key="frame" x="8" y="110" width="398" height="709"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="155" id="ETg-N3-92U" customClass="CartTableViewCell" customModule="PetsNPals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="398" height="155"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CartTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="166" id="ETg-N3-92U" customClass="CartTableViewCell" customModule="PetsNPals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="398" height="166"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ETg-N3-92U" id="v3n-ld-9by">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="166"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-Sl-Ggn">
-                                                            <rect key="frame" x="20" y="35" width="86" height="84"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-om-RFg">
+                                                            <rect key="frame" x="127" y="20" width="144" height="84"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="144" id="3iH-UU-hDh"/>
+                                                                <constraint firstAttribute="height" constant="84" id="sQS-Eg-wNF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-Sl-Ggn">
+                                                            <rect key="frame" x="20" y="35" width="86" height="95"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="95" id="SQO-hd-QZO"/>
+                                                                <constraint firstAttribute="width" constant="86" id="Wz1-zC-xrV"/>
+                                                            </constraints>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McK-7b-bmh">
-                                                            <rect key="frame" x="311" y="11" width="61" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McK-7b-bmh">
+                                                            <rect key="frame" x="303" y="47" width="75" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="hYT-oM-Sb2"/>
+                                                            </constraints>
                                                             <state key="normal" title="REMOVE">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -1060,33 +1078,61 @@
                                                                 <action selector="removeItemButton:" destination="ETg-N3-92U" eventType="touchUpInside" id="bpc-AO-vkN"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-3k-jMs">
-                                                            <rect key="frame" x="311" y="98" width="39" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-3k-jMs">
+                                                            <rect key="frame" x="321" y="134" width="57" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="57" id="Vqz-aL-ar1"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-om-RFg">
-                                                            <rect key="frame" x="127" y="11" width="33" height="21"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-Gt-4Yb">
+                                                            <rect key="frame" x="127" y="125" width="30" height="30"/>
+                                                            <state key="normal" title="-">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1H-a3-EVh">
+                                                            <rect key="frame" x="165" y="129" width="37" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="BRQ-2o-dYX"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAP-zf-jVV">
+                                                            <rect key="frame" x="191" y="128" width="30" height="30"/>
+                                                            <state key="normal" title="+">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="McK-7b-bmh" firstAttribute="leading" secondItem="tpl-om-RFg" secondAttribute="trailing" constant="158" id="59Q-nT-dAG"/>
-                                                        <constraint firstItem="nGu-3k-jMs" firstAttribute="top" secondItem="McK-7b-bmh" secondAttribute="bottom" constant="57" id="Bkk-j3-IeX"/>
-                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="leading" secondItem="Jc8-Sl-Ggn" secondAttribute="trailing" constant="21" id="IOX-9k-rsJ"/>
-                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="35" id="QOb-Xb-b37"/>
-                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="leading" secondItem="v3n-ld-9by" secondAttribute="leading" constant="20" symbolic="YES" id="fs8-6K-uC2"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Jc8-Sl-Ggn" secondAttribute="bottom" constant="36" id="gxF-PH-SAe"/>
-                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="11" id="lbq-C5-AhF"/>
+                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="leading" secondItem="v3n-ld-9by" secondAttribute="leading" constant="20" symbolic="YES" id="7vR-KD-fQn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Jc8-Sl-Ggn" secondAttribute="bottom" constant="36" id="AeH-Vx-sbZ"/>
+                                                        <constraint firstItem="McK-7b-bmh" firstAttribute="leading" secondItem="tpl-om-RFg" secondAttribute="trailing" constant="32" id="HNX-mD-Ba2"/>
+                                                        <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="35" id="Pck-VE-Tva"/>
+                                                        <constraint firstItem="McK-7b-bmh" firstAttribute="centerY" secondItem="tpl-om-RFg" secondAttribute="centerY" id="R03-Cz-Jrj"/>
+                                                        <constraint firstItem="3QW-Gt-4Yb" firstAttribute="leading" secondItem="Jc8-Sl-Ggn" secondAttribute="trailing" constant="21" id="S8j-55-mqE"/>
+                                                        <constraint firstItem="A1H-a3-EVh" firstAttribute="top" secondItem="tpl-om-RFg" secondAttribute="bottom" constant="25" id="cxI-0D-4le"/>
+                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="leading" secondItem="Jc8-Sl-Ggn" secondAttribute="trailing" constant="21" id="fQL-fR-0lM"/>
+                                                        <constraint firstItem="aAP-zf-jVV" firstAttribute="top" secondItem="tpl-om-RFg" secondAttribute="bottom" constant="24" id="fyT-21-Xnj"/>
+                                                        <constraint firstItem="nGu-3k-jMs" firstAttribute="top" secondItem="McK-7b-bmh" secondAttribute="bottom" constant="57" id="jdg-gx-FeD"/>
+                                                        <constraint firstItem="tpl-om-RFg" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="20" id="n3Y-ji-t4W"/>
+                                                        <constraint firstItem="A1H-a3-EVh" firstAttribute="leading" secondItem="3QW-Gt-4Yb" secondAttribute="trailing" constant="8" symbolic="YES" id="tiV-LM-25O"/>
+                                                        <constraint firstItem="aAP-zf-jVV" firstAttribute="leading" secondItem="A1H-a3-EVh" secondAttribute="trailing" constant="-11" id="uMN-eb-R4d"/>
+                                                        <constraint firstItem="3QW-Gt-4Yb" firstAttribute="top" secondItem="tpl-om-RFg" secondAttribute="bottom" constant="21" id="vpH-Mk-l1B"/>
+                                                        <constraint firstItem="nGu-3k-jMs" firstAttribute="leading" secondItem="Jc8-Sl-Ggn" secondAttribute="trailing" constant="215" id="yIK-RO-M8V"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="increamentQuantityBtn" destination="aAP-zf-jVV" id="CHQ-Mz-ylr"/>
                                                     <outlet property="prodImage" destination="Jc8-Sl-Ggn" id="HVW-vo-lgs"/>
                                                     <outlet property="prodPrice" destination="nGu-3k-jMs" id="JTQ-kr-rY9"/>
                                                     <outlet property="prodTitle" destination="tpl-om-RFg" id="EcK-K6-V78"/>
+                                                    <outlet property="quantityLabel" destination="A1H-a3-EVh" id="vnJ-4b-JBI"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

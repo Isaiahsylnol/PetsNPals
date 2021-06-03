@@ -13,14 +13,12 @@ class ManagePetViewController: UIViewController {
     var pets = [DogModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var editPetButton: UIButton!
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         // Sliding delete functionality 
         if editingStyle == .delete {
