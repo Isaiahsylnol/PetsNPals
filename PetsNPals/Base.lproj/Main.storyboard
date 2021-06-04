@@ -1061,7 +1061,6 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-Sl-Ggn">
                                                             <rect key="frame" x="20" y="35" width="86" height="95"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="95" id="SQO-hd-QZO"/>
                                                                 <constraint firstAttribute="width" constant="86" id="Wz1-zC-xrV"/>
                                                             </constraints>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
@@ -1110,8 +1109,8 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Jc8-Sl-Ggn" secondAttribute="bottom" constant="36" id="5hM-Bw-P8q"/>
                                                         <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="leading" secondItem="v3n-ld-9by" secondAttribute="leading" constant="20" symbolic="YES" id="7vR-KD-fQn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Jc8-Sl-Ggn" secondAttribute="bottom" constant="36" id="AeH-Vx-sbZ"/>
                                                         <constraint firstItem="McK-7b-bmh" firstAttribute="leading" secondItem="tpl-om-RFg" secondAttribute="trailing" constant="32" id="HNX-mD-Ba2"/>
                                                         <constraint firstItem="Jc8-Sl-Ggn" firstAttribute="top" secondItem="v3n-ld-9by" secondAttribute="top" constant="35" id="Pck-VE-Tva"/>
                                                         <constraint firstItem="McK-7b-bmh" firstAttribute="centerY" secondItem="tpl-om-RFg" secondAttribute="centerY" id="R03-Cz-Jrj"/>

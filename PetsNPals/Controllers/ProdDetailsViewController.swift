@@ -60,12 +60,10 @@ class ProdDetailsViewController: UIViewController {
     
     // MARK: - Add item selected to user cart, increment the cart badge item count
     @IBAction func addToCartButton(_ sender: UIButton) {
-        let cartView = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
         hub?.increment()
         hub?.pop()
         let prod = ProductModel(id: 0, url: "nil", name: name, breed: "nil", price: Double(price)!, supplier: supplier, rating: Int(rating)!, description: prodDescription, image: nil)
-        ProdDetailsViewController.prods.append(prod)
-        cartView.prods.append(prod)
+        CartViewController.prods.append(prod)
 //        print(ProdDetailsViewController.prods.count)
 //        print(ProdDetailsViewController.prods[0].name)
 //        print(ProdDetailsViewController.prods[0].price)
@@ -75,6 +73,7 @@ class ProdDetailsViewController: UIViewController {
     @objc func showCart(){
 
         let cartView = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        
         cartView.name = name
         cartView.price = price
         cartView.img = img

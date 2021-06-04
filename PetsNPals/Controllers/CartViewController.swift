@@ -19,26 +19,31 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //quantityLabel.text = String(num)
     }
     
-    var prods = [ProductModel]()
+    static var prods = [ProductModel]()
     var name = ""
     var price = ""
     var img = UIImage()
     var itemCount = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemCount
+        return CartViewController.prods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let pic = UIImage(data: prods[indexPath.row].image!)
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
-        cell.prodTitle.text = name
-        cell.prodPrice.text = "$\(price)"
+        
+        cell.prodTitle.text = CartViewController.prods[indexPath.row].name
+        cell.prodPrice.text = "$\(CartViewController.prods[indexPath.row].price)"
         cell.prodImage.image = img
         cell.quantityLabel.text = String(num)
         cell.increamentQuantityBtn.tag = indexPath.row
         cell.increamentQuantityBtn.addTarget(self, action: #selector(incrementQuantity(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 222
     }
     
     override func viewDidLoad() {
@@ -47,9 +52,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cartTableView?.delegate = self
         
         //print("from cart:\(name) & \(itemCount)")
-        print(num)
-        for i in prods{
+//        print("Item Quantity: \(num)")
+        for i in CartViewController.prods{
             print(i.name)
         }
+        print("Cart Quantity: \(CartViewController.prods.count)")
+//        print(CartViewController.prods[0].name)
     }
 }
