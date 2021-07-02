@@ -19,10 +19,26 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //quantityLabel.text = String(num)
     }
     
+    @objc func decrementQuantity(_ sender: UIButton) {
+        if(num <= 1){
+                print("can't have less than 1 quantity")
+            }
+        else {
+            num-=1
+        }
+        print(num)
+        cartTableView.reloadData()
+        //quantityLabel.text = String(num)
+    }
+    
+    @objc func deleteItem(_ sender: UIButton) {
+        print("deletion pressed \(sender.tag)")
+        
+        
+    }
+    
     static var prods = [ProductModel]()
-    var name = ""
-    var price = ""
-    var img = UIImage()
+
     var itemCount = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,16 +46,30 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let pic = UIImage(data: prods[indexPath.row].image!)
+//        let pic = UIImage(data: CartViewController.prods[indexPath.row].image!)
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
         
         cell.prodTitle.text = CartViewController.prods[indexPath.row].name
         cell.prodPrice.text = "$\(CartViewController.prods[indexPath.row].price)"
-        cell.prodImage.image = img
-        cell.quantityLabel.text = String(num)
+       
+        cell.quantityLabel.tag = indexPath.row
         cell.increamentQuantityBtn.tag = indexPath.row
+        cell.decreamentQuantityBtn.tag = indexPath.row
         cell.increamentQuantityBtn.addTarget(self, action: #selector(incrementQuantity(_:)), for: .touchUpInside)
+        cell.decreamentQuantityBtn.addTarget(self, action: #selector(decrementQuantity(_:)), for: .touchUpInside)
+        
+        cell.quantityLabel.text = String(num)
+        cell.removeItem.tag = indexPath.row
+        cell.removeItem.addTarget(self, action: #selector(deleteItem(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Sliding delete functionality
+        CartViewController.prods.remove(at: indexPath.row)
+        cartTableView.deleteRows(at: [indexPath], with: .fade)
+        cartTableView.endUpdates()
+        cartTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

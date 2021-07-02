@@ -15,9 +15,8 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
  
     @IBOutlet weak var increamentQuantityBtn: UIButton!
-    
-    @IBAction func removeItemButton(_ sender: UIButton) {
-    }
+    @IBOutlet weak var decreamentQuantityBtn: UIButton!
+    @IBOutlet weak var removeItem: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1073,9 +1073,6 @@
                                                             <state key="normal" title="REMOVE">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="removeItemButton:" destination="ETg-N3-92U" eventType="touchUpInside" id="bpc-AO-vkN"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-3k-jMs">
                                                             <rect key="frame" x="321" y="134" width="57" height="21"/>
@@ -1086,7 +1083,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-Gt-4Yb">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-Gt-4Yb" userLabel="decreament Quantity Btn">
                                                             <rect key="frame" x="127" y="125" width="30" height="30"/>
                                                             <state key="normal" title="-">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1127,11 +1124,13 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="decreamentQuantityBtn" destination="3QW-Gt-4Yb" id="8Hw-Od-VJD"/>
                                                     <outlet property="increamentQuantityBtn" destination="aAP-zf-jVV" id="CHQ-Mz-ylr"/>
                                                     <outlet property="prodImage" destination="Jc8-Sl-Ggn" id="HVW-vo-lgs"/>
                                                     <outlet property="prodPrice" destination="nGu-3k-jMs" id="JTQ-kr-rY9"/>
                                                     <outlet property="prodTitle" destination="tpl-om-RFg" id="EcK-K6-V78"/>
                                                     <outlet property="quantityLabel" destination="A1H-a3-EVh" id="vnJ-4b-JBI"/>
+                                                    <outlet property="removeItem" destination="McK-7b-bmh" id="Ugj-uT-pTy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

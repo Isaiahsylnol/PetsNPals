@@ -62,11 +62,9 @@ class ProdDetailsViewController: UIViewController {
     @IBAction func addToCartButton(_ sender: UIButton) {
         hub?.increment()
         hub?.pop()
+
         let prod = ProductModel(id: 0, url: "nil", name: name, breed: "nil", price: Double(price)!, supplier: supplier, rating: Int(rating)!, description: prodDescription, image: nil)
         CartViewController.prods.append(prod)
-//        print(ProdDetailsViewController.prods.count)
-//        print(ProdDetailsViewController.prods[0].name)
-//        print(ProdDetailsViewController.prods[0].price)
     }
     
     // MARK: - Present Cart View populated with stored user items
@@ -74,9 +72,7 @@ class ProdDetailsViewController: UIViewController {
 
         let cartView = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
         
-        cartView.name = name
-        cartView.price = price
-        cartView.img = img
+      
         cartView.itemCount = ProdDetailsViewController.prods.count
         navigationController?.pushViewController(cartView, animated: true)
        }
